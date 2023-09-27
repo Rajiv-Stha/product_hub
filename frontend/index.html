@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product hub</title>
+    <link rel="stylesheet" href="./public/styles/style.css">
+    <script defer src="./public/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
+
+    <div class="app_container">
+        <div id="navbar">
+            <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+          <div class="navbar_input_wrapper">
+
+              <input type="text" placeholder="Search"/>
+              <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="search--v1" class="navbar_search_btn"/>
+            </div>
+            <div class="navbar_button_wrapper">
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+                <a href="./public/html/login.html">
+
+                    <button class="navbar_login_btn">Login</button>
+                </a>
+                <a href="./public/html/signUp.html">
+
+                    <button>Sign up</button>
+                </a>
+            </div>
+
+          
+
+           
+        </div>
+        <div class="main_container">
+            <div class="hero_section">
+                <div class="category_box">
+                    <ul class="category_list">
+                        <li><a href="#">Men's Fashion</a></li>
+                        <li><a href="#">Women's Fashion</a></li>
+                        <li><a href="#">Cap</a></li>
+                        <li><a href="#">Shirt</a></li>
+                        <li><a href="#">T-shirt</a></li>
+                        <li><a href="#">Pant</a></li>
+                        <li><a href="#">Shorts</a></li>
+                    </ul>
+                </div>
+                <div class="slider_box">
+                    <img src="./public/images/slider1.jpg" alt="slider1" class="slider_img">
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=League+Spartan:wght@300;400&family=Poppins:wght@400;500;600;700&family=Shadows+Into+Light&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+/* navbar styling  */
+#navbar{
+
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 0 1rem;
+}
+
+.navbar_heading{
+    letter-spacing: 1px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.navbar_heading_span{
+  
+    color: white;
+ 
+
+}
+
+.navbar_input_wrapper{
+    display: flex;
+    /* background-color: green; */
+    height: 100%;
+    width: 510px;
+    align-items: center;
+    position: relative;
+}
+.navbar_input_wrapper input{
+    height: 60%;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 8px;
+    font-size: 12px;
+}
+.navbar_search_btn{
+    position: absolute;
+    right: 5px;
+}
+.navbar_button_wrapper{
+    display: flex;
+    
+    gap: 1rem;
+    align-items: center;
+  
+}
+.navbar_button_wrapper button{
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: orange;
+    background-color: white;
+    letter-spacing: 1px;
+}
+
+/* main container  */
+.main_container{
+  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+/* hero section  */
+.hero_section{
+    display: flex;
+    height: 300px;
+    /* background-color: green; */
+    gap: 1rem;
+}
+
+.category_box{
+    display: flex;
+    align-items: center;
+    /* background-color: violet; */
+    flex: 2;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.category_list{
+    background-color: rgb(230, 230, 230);
+   
+        width: 100%;
+        height: 100%;
+        
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        justify-content: space-between;
+        
+
+}
+
+.category_list li{
+    font-size: 13px;
+}
+.slider_box{
+   
+    flex: 10;
+    overflow: hidden;
+}
+.slider_img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}

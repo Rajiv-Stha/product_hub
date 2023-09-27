@@ -1,0 +1,89 @@
+.login_container{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding-top: 5rem;
+}
+.login_content{
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    width: 30%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.login_heading{
+    letter-spacing: 1px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.login_heading_span{
+    background-color: orange;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+.login_logo{
+    width: 150px;
+    border-radius: 10px;
+}
+.login_form{
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+}
+.login_input_box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.login_input_box label{
+    color: orange;
+    font-size: 14px;
+}
+.login_input_box input, .login_btn{
+    border: none;
+    outline: none;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.login_input_box input{
+    border: 1px solid rgba(208, 208, 208, 0.704); 
+ }
+.login_input_box input::placeholder{
+ 
+    color: #AEB1AF;
+    font-size: 12px;
+    letter-spacing: 0.9px;
+}
+.login_input_box input:focus{
+   border: 1px solid orange;
+   transition: 0.3s;
+   
+}
+.login_btn{
+    background-color: rgb(255, 173, 20);
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.linkToSignUp{
+    text-align: end;
+    color: orange;
+    font-size: 13px;
+    text-decoration: underline;
+}
