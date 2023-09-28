@@ -1,0 +1,110 @@
+.single_product_container{
+    display: flex;
+    align-items: center;
+  
+    width: 100%;
+    padding: 1.2rem;
+    height: 90vh;
+    justify-content: center;
+
+}
+.single_product_content{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+}
+.single_product_image_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(228, 225, 225); */
+    width: 400px;
+    flex: 5;
+    height: 100%;
+    
+}
+.single_product_main_image_wrapper{
+    background-color: rgb(242, 241, 241);
+    height: 75%;
+    width: 100%;
+
+}
+.single_product_main_image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.single_product_sub_image_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 100%;
+    gap: 1rem;
+}
+.single_product_sub_image{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(189, 189, 194);
+    object-fit: cover;
+}
+.single_product_details_box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    flex: 7;
+    /* background-color: green; */
+    gap: 1rem;
+    padding: 0 1rem;
+}
+.single_product_heading{
+    font-size: 22px;
+}
+.single_product_desc{
+    font-size: 14px;
+    text-align: justify;
+}
+.single_product_quantity_box{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 1rem;
+}
+.single_product_quantity_box button{
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.single_product_quantity{
+    font-size: 22px;
+}
+.single_product_button_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.single_product_button_wrapper button{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+.single_product_buy_btn{
+    background-color: #3D6CE5;
+  
+}
+.single_product_cart_btn{
+    
+    background-color: #FF9800;
+   
+}
+
