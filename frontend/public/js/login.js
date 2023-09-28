@@ -1,18 +1,26 @@
 const handleLogin = async (e) => {
   e.preventDefault();
 
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
+  const email = document.querySelector("#login_email");
+
+  const password = document.querySelector("#login_password");
+
   const emailPayload = {
-    email,
-    password,
+    email: email.value,
+    password: password.value,
   };
   try {
-    const res = await axios.post(
-      "http://localhost:8000/api/login",
+    const { status, data } = await axios.post(
+      "http://localhost:8000/api/auth/login",
       emailPayload
     );
-    console.log(res);
+    console.log(data);
+
+    email.value = "";
+    password.value = "";
+    if (status === 200) {
+      window.location.href = "http://127.0.0.1:5500/frontend/index.html";
+    }
   } catch (error) {
     console.log(error.message);
   }

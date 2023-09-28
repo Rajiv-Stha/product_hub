@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
+
     <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script defer src="../js/signUp.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="signup_container">
         <div class="signup_content">
-            
+            <h2 class="signup_heading">Shop<span class="signup_heading_span">hub</span></h2>
+            <form class="signup_form" id="signupForm">
+                <div class="signup_userdata_input_box">
+                    <!-- <input required id="signup_firstName" type="text" placeholder="First name"/>
+                    <input required id="signup_lastName" type="text" placeholder="Last name"/>     -->
+                    <input required id="signup_username" type="text" placeholder="Username" />
+                </div>
+                <div class="signup_userdata_input_box">
+                    
+                    <input required id="signup_email" type="text" placeholder="Enter your email address"/>
+                </div>
+                <div class="signup_userdata_input_box">
+                    <select id="signup_select" class="signin_select">
+                        <option value="choose">select country</option>
+                        <option value="Nepal">Nepal</option>
+                    </select>
+                </div>
+                <div class="signup_userdata_input_box">
+                    <input required id="signup_password" type="password" placeholder="Enter password"/>
+                    <input required id="signup_confirm_password" type="password" placeholder="Confirm password"/>
+                </div>
+                <button type="submit" class="signin_btn">Sign in</button>
+                <a href="./login.html" class="link_to_login">Already have account</a>
+
+            </form>
         </div>
     </div>
 </body>

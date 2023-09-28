@@ -1,0 +1,92 @@
+.signup_container{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+.signup_content{
+    width: 35%;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.signup_heading{
+    letter-spacing: 1px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.signup_heading_span{
+    background-color: orange;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+.signup_userdata_input_box{
+    display: flex;
+}
+.signup_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+}
+.signup_userdata_input_box{
+    display: flex;
+    gap: 5px;
+}
+.signin_select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+  
+}
+
+.signup_userdata_input_box input, .signin_btn{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 35px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+.signup_userdata_input_box input, .signin_select{
+    border: 1px solid rgba(208, 208, 208, 0.704); 
+    font-size: 12px;
+}
+.signup_userdata_input_box input::placeholder, .signin_select{
+    color: #AEB1AF;
+    font-size: 12px;
+    letter-spacing: 0.9px;
+}
+.signup_userdata_input_box input:focus, .signin_select:focus{
+    border: 1px solid orange;
+    transition: 0.3s;
+}
+.signin_select{
+    color: black;
+  
+}
+.signin_btn{
+    background-color: rgb(255, 173, 20);
+    font-weight: 600;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.link_to_login{
+    text-align: end;
+    color: orange;
+    font-size: 13px;
+    text-decoration: underline;
+}
