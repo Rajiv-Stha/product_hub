@@ -26,7 +26,7 @@
     align-items: center;
 }
 .login_heading_span{
-    background-color: orange;
+    background-color: var(--main_color);
     color: white;
     padding: 5px 8px;
     border-radius: 5px;
@@ -48,7 +48,7 @@
     gap: 5px;
 }
 .login_input_box label{
-    color: orange;
+    color: var(--main_color);
     font-size: 14px;
 }
 .login_input_box input, .login_btn{
@@ -69,12 +69,12 @@
     letter-spacing: 0.9px;
 }
 .login_input_box input:focus{
-   border: 1px solid orange;
+   border: 1px solid var(--main_color);
    transition: 0.3s;
    
 }
 .login_btn{
-    background-color: rgb(255, 173, 20);
+    background-color: var(--main_color);
     font-weight: 600;
     font-size: 17px;
     color: white;
@@ -83,7 +83,7 @@
 }
 .linkToSignUp{
     text-align: end;
-    color: orange;
+    color: var(--main_color);
     font-size: 13px;
     text-decoration: underline;
 }

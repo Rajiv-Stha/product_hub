@@ -8,10 +8,13 @@
     list-style: none;
     color: inherit;
 }
+:root{
+    --main_color:#FF9800;
+}
 /* navbar styling  */
 #navbar{
 
-    background-color: orange;
+    background-color: var(--main_color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -66,7 +69,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    color: orange;
+    color: var(--main_color);
     background-color: white;
     letter-spacing: 1px;
 }

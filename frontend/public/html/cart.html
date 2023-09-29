@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/cart.css ">
+</head>
+<body>
+    <div id="navbar">
+        <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+      <div class="navbar_input_wrapper">
+
+          <input type="text" placeholder="Search"/>
+          <img width="20" height="20" src="./public/icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
+        
+          
+        </div>
+        <div class="navbar_button_wrapper">
+            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+            <a href="./public/html/login.html">
+
+                <button class="navbar_login_btn">Login</button>
+            </a>
+            <a href="./public/html/signUp.html">
+
+                <button>Sign up</button>
+            </a>
+        </div>
+        
+
+      
+
+       
+    </div>
+    <div class="cart_container">
+        <div class="left_cart_content">
+            <div class="cart_select_all">
+                <div class="cart_checkbox_wrapper">
+
+                    <input type="checkbox" id="selectAll">
+                    <label for="selectAll">Select all</label>
+                </div>
+                <button class="cart_delete_button">
+                    <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/filled-trash.png" alt="filled-trash"/>
+                    <p>Delete</p>
+                </button>
+
+            </div>
+            <div class="cart_items">
+                <div class="cart_card">
+                   <div class="cart_desc">
+
+                
+                    <div class="cart_img_wrapper">
+                        <img src="../images/slider1.jpg" alt="cart_img">
+                    </div>
+                    <div class="cart_details">
+                        <h3>Levi's Women's Skinny Fit Jeans</h3>
+                        <p>Exuding a cool and rugged style, this pair of blue jeans from Levi's@
+                            is an ideal pick for its versatile range Of pairing options. These
+                            skinny-fit, cotton blend jeans are soft against the skin and highly
+                            flexible too.</p>
+
+                    </div>
+                </div>
+                    <div class="cart_others">
+                        <h3>Rs. 3200</h3>
+                        <div class="cart_others_icon">
+                            <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/filled-like.png" alt="filled-like"/>
+                            <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/filled-trash.png" alt="filled-trash"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right_cart_content">
+            <div class="order_summary_box">
+                <h2>Order Summary</h2>
+                <div class="price_box">
+
+             
+                <div class="sub_total_box">
+
+                    <p>Sub Total</p>
+                    <div class="sub_total_price">
+
+                        <p>Rs. 500</p>
+                        <p>Rs. 120</p>  
+                    </div>
+                </div>
+               <div class="total_box">
+                <p>Total</p>
+                <p>Rs. 620</p>
+               </div>
+            </div>
+            <button class="cart_checkout_btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
