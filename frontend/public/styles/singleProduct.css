@@ -74,6 +74,10 @@
     /* justify-content: center; */
     gap: 1rem;
 }
+.single_product_stock_box{
+    display: flex;
+    gap: 8px;
+}
 .single_product_quantity_box button{
     padding: 5px 12px;
     border: none;

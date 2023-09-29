@@ -6,10 +6,17 @@
     <title>Product </title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/singleProduct.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/singleProduct.js"></script>
+    
 </head>
 <body>
     <div id="navbar">
+        <a href="http://127.0.0.1:5500/frontend/index.html">
+
         <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+        </a>
       <div class="navbar_input_wrapper">
 
           <input type="text" placeholder="Search"/>
@@ -39,7 +46,7 @@
        
         <div class="single_product_image_wrapper">
             <div class="single_product_main_image_wrapper">
-                <img src="/frontend/public/images/shorts.png" alt="product_img" class="single_product_main_image">
+                <img class="single_product_main_image" src="/frontend/public/images/shorts.png" alt="product_img" class="single_product_main_image">
             </div>
             <div class="single_product_sub_image_wrapper">
                 <img src="/frontend/public/images/shorts.png" alt="product_img" class="single_product_sub_image">
@@ -52,12 +59,17 @@
             <h1 class="single_product_heading">Levi's Women's Skinny Fit Jeans</h1>
             <p class="single_product_desc">Exuding a COOI and rugged style. this pair Of blue jeans from Leviso is an ideal pick for its versatile renge of pairing options. These skinny-fit, cotton blend jeans are soft against the skin and highly too.</p>
             <h2 class="single_product_price">Rs. 4200</h2>
+            <div class="single_product_stock_box">
+
+                <p>In stock : </p>
+                <p class="single_product_stock">50</p>
+            </div>
             <div class="single_product_quantity_box">
 
                 <p>Quantity</p>
-                <button>-</button>
-                <h2 class="single_product_quantity">1</h2>
-                <button>+</button>
+                <button class="single_product_minus_btn">-</button>
+                <h2 class="single_product_quantity"></h2>
+                <button class="single_product_add_btn">+</button>
 
             </div>
             <div class="single_product_button_wrapper">

@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product hub</title>
     <link rel="stylesheet" href="./public/styles/style.css">
-    <script defer src="./public/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
 
 </head>
 <body>
 
-    <div class="app_container">
+    <div class="app_container"> 
         <div id="navbar">
-            <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
-          <div class="navbar_input_wrapper">
+            <a href="http://127.0.0.1:5500/frontend/index.html">
+
+                <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+            </a>
+                <div class="navbar_input_wrapper">
 
               <input type="text" placeholder="Search"/>
               <img width="20" height="20" src="./public/icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
@@ -173,4 +176,9 @@
     </div>
     
 </body>
+<script src="./public/js/main.js"></script>
+<script>
+fetchCategoryItems();
+fetchAllProducts(); 
+</script>
 </html>
