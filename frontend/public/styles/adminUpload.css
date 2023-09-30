@@ -102,7 +102,7 @@ input, select{
 }
 .uploadIcon{
     font-size: 25px;
-    color: var(--border_color);
+    color: rgba(193, 193, 193, 0.683);
 }
 .uploadImage p{
     font-size: 10px;

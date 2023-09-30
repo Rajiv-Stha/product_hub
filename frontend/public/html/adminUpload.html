@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload items</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/adminUpload.css">
 </head>
 <body>
     <div id="navbar">
@@ -56,20 +57,20 @@
             <label for="desc">Desc</label>
             <input type="text" name="desc" id="desc" placeholder="Enter desc"/>
           </div>
-          <div className={styles.priceInputItem}>
-            <div className={styles.priceInput}>
+          <div class="priceInputItem">
+            <div class="priceInput">
   
-            <label htmlFor="price">Price</label>
-            <input type="number" id="price" placeholder="Enter price" onChange={handleInputChange} name="price" value={uploadData.price} />
+            <label for="price">Price</label>
+            <input type="number" id="price" placeholder="Enter price" name="price"  />
             </div>
-            <div className={styles.genderInput}>
+            <div class="genderInput">
   
             <label htmlFor="price">Gender</label>
             <select name="gender" id="gender" onChange={handleGenderChange}>
-              <option className={styles.selectOption} value="choose" selected disabled>gender</option>
-              <option className={styles.selectOption} value="male">Male</option>
-              <option className={styles.selectOption} value="female">Female</option>
-              <option className={styles.selectOption} value="other">Other</option>
+              <option class="selectOption" value="choose" selected disabled>gender</option>
+              <option class="selectOption" value="male">Male</option>
+              <option class="selectOption" value="female">Female</option>
+              <option class="selectOption" value="other">Other</option>
             </select>
             </div>
        
@@ -77,20 +78,18 @@
             
          
           </div>
-          <div className={styles.priceInputItem}>
+          <div class="priceInputItem">
             
-          <div className={styles.inputItem}>
+          <div class="inputItem">
             <label htmlFor="quantity" >Quantity</label>
             <input type="number" name="quantity" id="quantity" placeholder="Enter Quantity" onChange={handleInputChange}/>
           </div>
-                    <div className={styles.genderInput}>
+                    <div class="genderInput">
   
             <label htmlFor="price">Category</label>
-            <select name="category" id="cateogory" onChange={handleSelectChange}>
-              <option className={styles.selectOption} value="choose" selected disabled>category</option>
-              {
-                allCategories.map(cat=>   <option className={styles.selectOption} value={cat.categoryName}>{cat.categoryName}</option>)
-              }
+            <select name="category" id="cateogory">
+              <option class="selectOption" value="choose" selected disabled>category</option>
+
     
             </select>
             </div>
@@ -99,16 +98,13 @@
   
   
           
-          <div className={styles.inputItem}>
+          <div class="inputItem">
   
           <label>Upload Image</label>
-          <div className={styles.uploadImage} onClick={()=>fileRef.current?.click()}>
-            <input type="file" style={{display:"none"}} ref={fileRef} onChange={handleFileChange} />
-            <IoMdCloudUpload className={styles.uploadIcon} />
-            <p>Upload</p>
-          </div>
-          </div>
-          <button type="submit" className={styles.uploadBtn}>{isUploading ? "Uploading":"Upload"}</button>
+
+          <IoMdCloudUpload class="uploadIcon" />
+    </div>
+          <button type="submit" class="uploadBtn">Upload</button>
         
         </form>
   
