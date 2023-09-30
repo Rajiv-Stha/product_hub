@@ -76,6 +76,7 @@
 .admin_order_content_table thead tr{
     background-color: var(--main_color);
     color: white;
+    font-size: 15px;
 }
 .admin_order_content_table thead tr th{
     font-weight: 600;
@@ -84,4 +85,5 @@
 
     .admin_order_content_table tbody tr{
         border-bottom: 1px solid var(--main_color) ;
+        font-size: 14px;
     }

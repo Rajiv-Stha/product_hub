@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload items</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div id="navbar">
+        <a href="http://127.0.0.1:5500/frontend/index.html">
+
+        <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+        </a>
+      <div class="navbar_input_wrapper">
+
+          <input type="text" placeholder="Search"/>
+          <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
+        
+          
+        </div>
+        <div class="navbar_button_wrapper">
+            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+            <a href="./public/html/login.html">
+
+                <button class="navbar_login_btn">Login</button>
+            </a>
+            <a href="./public/html/signUp.html">
+
+                <button>Sign up</button>
+            </a>
+        </div>
+
+
+
+       
+    </div>
+    <div class="uploadContainer">
+
+        <form class="form">
+        <div class="formHeader">
+  
+      <IoMdCloudUpload/>  
+      <h2 class="uploadHeading">Upload</h2>
+        </div>
+  
+  
+  
+          <div class="inputItem">
+            <label for="name" >Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter product name" />
+          </div>
+  
+  
+          <div class="inputItem">
+            <label for="desc">Desc</label>
+            <input type="text" name="desc" id="desc" placeholder="Enter desc"/>
+          </div>
+          <div className={styles.priceInputItem}>
+            <div className={styles.priceInput}>
+  
+            <label htmlFor="price">Price</label>
+            <input type="number" id="price" placeholder="Enter price" onChange={handleInputChange} name="price" value={uploadData.price} />
+            </div>
+            <div className={styles.genderInput}>
+  
+            <label htmlFor="price">Gender</label>
+            <select name="gender" id="gender" onChange={handleGenderChange}>
+              <option className={styles.selectOption} value="choose" selected disabled>gender</option>
+              <option className={styles.selectOption} value="male">Male</option>
+              <option className={styles.selectOption} value="female">Female</option>
+              <option className={styles.selectOption} value="other">Other</option>
+            </select>
+            </div>
+       
+            
+            
+         
+          </div>
+          <div className={styles.priceInputItem}>
+            
+          <div className={styles.inputItem}>
+            <label htmlFor="quantity" >Quantity</label>
+            <input type="number" name="quantity" id="quantity" placeholder="Enter Quantity" onChange={handleInputChange}/>
+          </div>
+                    <div className={styles.genderInput}>
+  
+            <label htmlFor="price">Category</label>
+            <select name="category" id="cateogory" onChange={handleSelectChange}>
+              <option className={styles.selectOption} value="choose" selected disabled>category</option>
+              {
+                allCategories.map(cat=>   <option className={styles.selectOption} value={cat.categoryName}>{cat.categoryName}</option>)
+              }
+    
+            </select>
+            </div>
+  
+              </div>
+  
+  
+          
+          <div className={styles.inputItem}>
+  
+          <label>Upload Image</label>
+          <div className={styles.uploadImage} onClick={()=>fileRef.current?.click()}>
+            <input type="file" style={{display:"none"}} ref={fileRef} onChange={handleFileChange} />
+            <IoMdCloudUpload className={styles.uploadIcon} />
+            <p>Upload</p>
+          </div>
+          </div>
+          <button type="submit" className={styles.uploadBtn}>{isUploading ? "Uploading":"Upload"}</button>
+        
+        </form>
+  
+      </div>
+  
+    
+</body>
+</html>

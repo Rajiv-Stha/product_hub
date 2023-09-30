@@ -10,7 +10,7 @@
     flex: 1.5;
     padding: 1rem;
     /* height: 100vh; */
-    background-color: white;
+    background-color:  rgb(210, 210, 210);
 }
 .admin_product_item{
     /* background-color: rgb(106, 106, 127); */
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 1rem;
+    padding: 8px 4rem;
 }
 .admin_product_topBar h2{
     color: var(--main_color);
@@ -60,7 +60,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 4rem;
 }
 .admin_product_inputBar{
     width: 60%;
