@@ -31,14 +31,16 @@
     flex: 10.5;
     gap: 1rem;
     padding: 1rem;
+    min-height: 90vh;
 }
 .admin_order_type_box{
     height: 50px;
     display: flex;
     align-items: center;
     gap: 2px;
+    /* background-color: green; */
 }
-.admin_order_type_box button{
+.admin_order_type_box a{
     width: 100%;
     border: none;
     outline: none;
@@ -46,8 +48,40 @@
     cursor: pointer;
     letter-spacing: 1px;
     border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
 .active{
+    background-color: var(--main_color) !important;
+    color: whitesmoke !important;
+    border: none !important;
+}
+
+.admin_order_content_table{
+
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+.admin_order_content_table th, .admin_order_content_table td{
+    padding: 12px 15px;
+}
+.admin_order_content_table thead tr{
     background-color: var(--main_color);
     color: white;
 }
+.admin_order_content_table thead tr th{
+    font-weight: 600;
+}
+
+
+    .admin_order_content_table tbody tr{
+        border-bottom: 1px solid var(--main_color) ;
+    }
