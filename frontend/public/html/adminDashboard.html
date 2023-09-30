@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/adminOrder.css">
+    <link rel="stylesheet" href="../styles/adminDashboard.css">
 </head>
 <body>
     <div id="navbar">
@@ -36,10 +36,10 @@
 
        
     </div>
-    <div class="admin_order_container">
-        <div class="admin_order_sidebar">
-            <ul class="admin_order_item">
-                <li><a href="./adminDashboard.html"><svg width="14" height="14" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="admin_dashboard_container">
+        <div class="admin_dashboard_sidebar">
+            <ul class="admin_dashboard_item">
+                <li><a href="./adminDashboard.html"><svg width="13" height="13" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.8889 8.33333V0H25V8.33333H13.8889ZM0 13.8889V0H11.1111V13.8889H0ZM13.8889 25V11.1111H25V25H13.8889ZM0 25V16.6667H11.1111V25H0Z" fill="#040404"/>
                     </svg>
                     Dashboard</a></li>
@@ -53,52 +53,56 @@
                     Order</a></li>
             </ul>
         </div>
-        <div class="admin_order_content">
-            <h2>Order</h2>
-            <div class="admin_order_type_box">
-                <a href="./adminPendingOrder.html" class="admin_order_pending_link active">
-                    Pending Order
-                </a>
-                <a href="./adminDispatchedOrder.html" class="admin_order_dispatched_link">
-                    Dispatched Order
+        <div class="admin_dashboard_content">
+            <h3>Dashboard</h3>
+            <div class="admin_dashboard_detailBox">
+                <div class="admin_dashboard_totals">
+                    <img src="../icons/totalSales.png" alt="totalSales">
+                    <div>
+                        <p class="admin_dashboard_sales_para">Total Sales</p>
+                        <p class="admin_dashboard_sales_para2">Rs. 4500</p>
+                    </div>
 
-                </a>
-                <a href="./adminDeliveredOrder.html" class="admin_order_delivered_link">Delivered Order</a>
-
+                </div>
+                <div class="admin_dashboard_totals">
+                    <img src="../icons/totalOrders.png" alt="totalSales">
+                    <div>
+                        <p class="admin_dashboard_sales_para">Total Orders</p>
+                        <p class="admin_dashboard_sales_para2">500</p>
+                    </div>
+                </div>
+                <div class="admin_dashboard_totals">
+                    <img src="../icons/totalProducts.png" alt="totalSales">
+                    <div>
+                        <p class="admin_dashboard_sales_para">Total Products</p>
+                        <p class="admin_dashboard_sales_para2">900</p>
+                    </div>
+                </div>
             </div>
-            <div class="admin_order_details">
-                <table class="admin_order_content_table">
-                    <thead>
-
-                        <tr>
-                            <th>Order ID.</th>
-                            <th>Client name</th>
-                            <th>Client email</th>
-                            <th>Price</th>
-                            <th>Data</th>
-                        </tr>
-                    </thead>
+            <div class="admin_dashboard_latest_orders">
+                <h2>Latest Orders</h2>
+                <table class="admin_dashboard_table">
                     <tbody>
-
                         <tr>
                             <td>213</td>
-                            <td>Rajiv Shrestha</td>
-                            <td>rajiv123@gmail.com</td>
-                            <td>Rs. 4300</td>
-                            <td>03/04/2023</td>
+                            <td>Rajiv shrestha</td>
+                            <td>Rajiv@gmail.com</td>
+                            <td>Rs. 540</td>
+                            <td class="admin_dashboard_order_status">Delivered</td>
+                            <td>07/06/2023</td>
                         </tr>
                         <tr>
                             <td>213</td>
-                            <td>Rajiv Shrestha</td>
-                            <td>rajiv123@gmail.com</td>
-                            <td>Rs. 4300</td>
-                            <td>03/04/2023</td>
+                            <td>Rajiv shrestha</td>
+                            <td>Rajiv@gmail.com</td>
+                            <td>Rs. 540</td>
+                            <td class="admin_dashboard_order_status">Cancelled</td>
+                            <td>07/06/2023</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    
 </body>
 </html>

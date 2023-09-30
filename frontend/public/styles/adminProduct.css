@@ -52,6 +52,7 @@
     padding: 8px 12px;
     background-color: #3D6CE5;
     color: white;
+    font-size: 13px;
 }
 .admin_product_searchBar{
     display: flex;
