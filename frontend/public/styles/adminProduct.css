@@ -1,18 +1,18 @@
-.admin_dashboard_container{
+.admin_product_container{
     width: 100%;
     background-color: gainsboro;
     display: flex;
    
 }
-.admin_dashboard_sidebar{
+.admin_product_sidebar{
     display: flex;
     /* flex-direction: column; */
-    flex: 2;
+    flex: 1.5;
     padding: 1rem;
     /* height: 100vh; */
     background-color: white;
 }
-.admin_dashboard_item{
+.admin_product_item{
     /* background-color: rgb(106, 106, 127); */
     width: 100%;
     display: flex;
@@ -20,27 +20,32 @@
     gap: 1rem;
 
 }
-.admin_dashboard_content{
+.admin_product_item li a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.admin_product_content{
     display: flex;
     flex-direction: column;
-    flex: 10;
+    flex: 10.5;
     /* background-color: bisque; */
     gap: 1rem;
 }
-.admin_dashboard_topBar{
+.admin_product_topBar{
     /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px 1rem;
 }
-.admin_dashboard_topBar h2{
+.admin_product_topBar h2{
     color: var(--main_color);
     letter-spacing: 1px;
     font-size: 22px;
     font-weight: 600;
 }
-.admin_dashboard_create_btn{
+.admin_product_create_btn{
     border: none;
     outline: none;
     border-radius: 5px;
@@ -48,7 +53,7 @@
     background-color: #3D6CE5;
     color: white;
 }
-.admin_dashboard_searchBar{
+.admin_product_searchBar{
     display: flex;
     /* background-color: rgb(221, 221, 221); */
     height: 100%;
@@ -57,7 +62,7 @@
     justify-content: space-between;
     padding: 0 1rem;
 }
-.admin_dashboard_inputBar{
+.admin_product_inputBar{
     width: 60%;
     height: 100%;
     display: flex;
@@ -65,7 +70,7 @@
     position: relative;
 }
 
-.admin_dashboard_searchBar input{
+.admin_product_searchBar input{
     height: 85%;
     border: none;
     width: 100%;
@@ -74,7 +79,7 @@
     padding: 0 8px;
     font-size: 12px;
 }
-.admin_dashboard_select{
+.admin_product_select{
     height: 40px;
     border-radius: 5px;
     padding: 0 1rem;
@@ -82,17 +87,18 @@
     outline: none;
 
 }
-.admin_dashboard_card_container{
+.admin_product_card_container{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     /* background-color:rgb(233, 233, 233); */
-    padding: 1rem;
+    padding: 10px 5px;
     gap: 1rem;
     justify-content: center;
+
 }
-.admin_dashboard_card{
-    width: 230px;
+.admin_product_card{
+    width: 210px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -101,42 +107,42 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.613);
 }
-.admin_dashboard_card_img_wrapper{
+.admin_product_card_img_wrapper{
     border-radius: 5px;
     overflow: hidden;
-    height: 150px;
+    height: 170px;
 }
-.admin_dashboard_card_img_wrapper img{
+.admin_product_card_img_wrapper img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.admin_dashboard_card_detail{
+.admin_product_card_detail{
     display: flex;
     flex-direction: column;
     gap: 3px;
     height: 50px;
 }
-.admin_dashboard_card_detail p{
+.admin_product_card_detail p{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.admin_dashboard_product_name{
+.admin_product_product_name{
     font-size: 14px;
     letter-spacing: 0.8px;
 }
-.admin_dashboard_product_price{
+.admin_product_product_price{
     font-size: 16px;
     font-weight: 500;
 }
-.admin_dashboard_card_button_wrapper{
+.admin_product_card_button_wrapper{
     /* background-color: red; */
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.admin_dashboard_card_button_wrapper button{
+.admin_product_card_button_wrapper button{
     border: none;
     outline: none;
     width: 100%;
@@ -149,10 +155,10 @@
     border: 1px solid gainsboro;
     cursor: pointer;
 }
-.admin_dashboard_card_del_icon{
+.admin_product_card_del_icon{
     width: 16px;
     height: 16px;
 }
-.admin_dashboard_del_txt{
+.admin_product_del_txt{
     color: #ff0000;
 }
