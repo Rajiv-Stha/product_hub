@@ -61,3 +61,6 @@ const fetchAllProducts = async () => {
     console.log(error);
   }
 };
+
+fetchCategoryItems();
+fetchAllProducts();

@@ -24,6 +24,7 @@
     width: 400px;
     flex: 5;
     height: 100%;
+    gap: 10px;
     
 }
 .single_product_main_image_wrapper{

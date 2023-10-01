@@ -4,6 +4,7 @@ let addBtn = document.querySelector(".single_product_add_btn");
 let minusBtn = document.querySelector(".single_product_minus_btn");
 let quantityValue = document.querySelector(".single_product_quantity");
 let addToCartBtn = document.querySelector(".single_product_cart_btn");
+const buyBtn = document.querySelector(".single_product_buy_btn");
 
 let productData;
 let quantity = 1;
@@ -51,11 +52,10 @@ minusBtn.addEventListener("click", () => {
 });
 
 addToCartBtn.addEventListener("click", () => {
-  cart.push(productData);
-  console.log(cart);
+  setLs({ ...productData, buyQuantity: quantity });
 });
 let getLs = () => {
-  const cartData = localStorage.getItem("cart");
+  let cartData = localStorage.getItem("cart");
   if (cartData) {
     cartData = JSON.parse(cartData);
   }
@@ -67,3 +67,21 @@ let setLs = (cart) => {
   localStorage.setItem("cart", JSON.stringify(allCartData));
 };
 console.log(cart);
+
+buyBtn.addEventListener("click", async () => {
+  let newOrder = {
+    buyer: "6512c870c0ef27ad319b04ea",
+    quantity: quantity,
+    product: productId,
+    totalPrice: quantity * productData.price,
+  };
+  try {
+    const { data, status } = await axios.post(
+      "http://localhost:8000/api/order/create",
+      newOrder
+    );
+    console.log(data);
+  } catch (error) {
+    console.log(error.message);
+  }
+});

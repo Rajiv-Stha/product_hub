@@ -32,5 +32,6 @@ app.use("/api/user", require("./routes/userRoute"));
 app.use("/api/product", require("./routes/productRoute"));
 app.use("/api/auth", require("./routes/authRoute"));
 app.use("/api/category", require("./routes/categoryRoute"));
+app.use("/api/order", require("./routes/orderRoute"));
 app.use(require("./middlewares/error"));
 app.listen(8000, () => console.log("server listening on port 8000"));

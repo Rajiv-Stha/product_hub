@@ -36,6 +36,7 @@
     border: none;
     outline: none;
     background-color: transparent;
+    gap: 5px;
 }
 .cart_items{
     width: 100%;
@@ -63,7 +64,7 @@
 
 }
 .cart_img_wrapper{
-    width: 230px;
+    /* width: 320px; */
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -81,6 +82,12 @@
 }
 .cart_details p{
     font-size: 13px;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+
 }
 .cart_others{
     display: flex;
