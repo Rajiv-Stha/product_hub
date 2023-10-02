@@ -129,6 +129,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.subPriceWrapper{
+    display: flex;
+    gap: 1.4rem;
+}
 .total_box{
     display: flex;
     justify-content: space-between;
@@ -144,4 +149,12 @@
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
+    cursor: pointer;
 }
+
+
+/* media query */
+@media only screen and (min-width: 769px) and (max-width: 992px){}
+@media screen  and (min-width:600px) and (max-width:768px) {}
+@media screen  and (min-width:480px) and (max-width:600px){}
+@media screen  and (max-width:480px){}

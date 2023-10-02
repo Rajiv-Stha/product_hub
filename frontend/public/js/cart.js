@@ -1,4 +1,6 @@
 const cartContainer = document.querySelector(".cart_items");
+const subTotalPrice = document.querySelector(".sub_total_price");
+let cartTotalPrice = document.querySelector(".cartTotalPrice");
 
 let getLs = () => {
   let cartData = localStorage.getItem("cart");
@@ -10,6 +12,7 @@ let getLs = () => {
 
 const displayCart = () => {
   const cartData = getLs();
+  cartContainer.innerHTML = "";
   cartData.forEach((cart) => {
     cartContainer.innerHTML += `<div class="cart_card">
         <div class="cart_desc">
@@ -25,10 +28,10 @@ const displayCart = () => {
          </div>
      </div>
          <div class="cart_others">
-             <h3>Rs. ${cart.price}</h3>
+             <h3>Rs. ${cart.price} (${cart.buyQuantity})</h3>
              <div class="cart_others_icon">
                  <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/filled-like.png" alt="filled-like"/>
-                 <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/filled-trash.png" alt="filled-trash"/>
+                 <img onclick="handleDeleteCart('${cart._id}')" width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/filled-trash.png" alt="filled-trash"/>
              </div>
          </div>
      </div>`;
@@ -36,3 +39,36 @@ const displayCart = () => {
 };
 
 displayCart();
+
+const removeCartFromLs = (deletedId) => {
+  let allCart = getLs();
+  const filteredCart = allCart.filter((cart) => cart._id !== deletedId);
+  localStorage.setItem("cart", JSON.stringify(filteredCart));
+};
+const handleDeleteCart = (id) => {
+  // console.log(cart);
+  removeCartFromLs(id);
+  displayCart();
+  displayCheckOutPrice();
+};
+
+const displayCheckOutPrice = () => {
+  let allCart = getLs();
+  let sum = 0;
+  subTotalPrice.innerHTML = "";
+  allCart.forEach((cart) => {
+    sum += cart.price * cart.buyQuantity;
+
+    subTotalPrice.innerHTML += `
+
+    <div class="subPriceWrapper">
+    <p>${cart.price} * ${cart.buyQuantity}  </p><p>Rs. ${
+      cart.price * cart.buyQuantity
+    } </p>
+    </div>
+    `;
+  });
+  cartTotalPrice.innerText = sum;
+};
+
+displayCheckOutPrice();
