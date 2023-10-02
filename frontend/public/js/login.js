@@ -1,3 +1,12 @@
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:8000/api",
+  withCredentails: true,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+  },
+});
+
 const handleLogin = async (e) => {
   e.preventDefault();
 
@@ -10,15 +19,14 @@ const handleLogin = async (e) => {
     password: password.value,
   };
   try {
-    const { status, data } = await axios.post(
-      "http://localhost:8000/api/auth/login",
+    const { status, data } = await axiosInstance.post(
+      "/auth/login",
       emailPayload
     );
-    console.log(data);
-
     email.value = "";
     password.value = "";
     if (status === 200) {
+      localStorage.setItem("user", JSON.stringify(data.message));
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
     }
   } catch (error) {

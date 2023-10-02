@@ -6,14 +6,17 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/adminProduct.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/admin.js"></script>
 </head>
 <body>
     <div id="navbar">
         <a href="http://127.0.0.1:5500/frontend/index.html">
 
-        <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+            <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
         </a>
-      <div class="navbar_input_wrapper">
+            <div class="navbar_input_wrapper">
 
           <input type="text" placeholder="Search"/>
           <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
@@ -21,21 +24,33 @@
           
         </div>
         <div class="navbar_button_wrapper">
-            <a href="./cart.html">
+            <a class="navCartButton" href="./cart.html">
 
                 <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
             </a>
-            <a href="./public/html/login.html">
+          
 
+            <a href="./login.html">
                 <button class="navbar_login_btn">Login</button>
             </a>
-            <a href="./public/html/signUp.html">
+            <a href="./signUp.html">
 
                 <button>Sign up</button>
             </a>
         </div>
+        <div class="profile_wrapper">
+            <img class="avatar_img" src="" alt="avatar">
+            <div>
+                <h3 class="username"></h3>
+                <p class="useremail"></p>
+            </div>
+            <button class="logoutButton">
+                <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="exit--v1"/>
+            </button>
+        </div>
 
-
+      
 
        
     </div>
@@ -78,146 +93,8 @@
                   
             </div>
             <div class="admin_product_card_container">
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
 
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="admin_product_card">
-                    <div class="admin_product_card_img_wrapper">
-                        <img src="https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp" alt="productImg">
-                    </div>
-                    <div class="admin_product_card_detail">
-
-                        <p class="admin_product_product_name">Tshirt for men </p>
-                        <h3 class="admin_product_product_price">Rs. 900</h3>
-                    </div>
-                    <div class="admin_product_card_button_wrapper">
-                        <button>
-                            <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                            <p>Edit</p>
-                        </button>
-                        <button>
-                            <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
-                            <p class="admin_product_del_txt">Delete</p>
-                        </button>
-                    </div>
-                </div>
+               
 
             </div>
         </div>

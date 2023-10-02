@@ -10,6 +10,6 @@ const router = require("express").Router();
 router.post("/create", createProduct);
 router.get("/", getProduct);
 router.put("/:id", updateProduct);
-router.put("/:id", deleteProduct);
+router.delete("/:id", deleteProduct);
 
 module.exports = router;

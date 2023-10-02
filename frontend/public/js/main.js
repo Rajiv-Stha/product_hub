@@ -1,3 +1,13 @@
+let avatar = document.querySelector(".avatar_img");
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:8000/api",
+  withCredentials: true,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+  },
+});
+
 let cart = [
   {
     category: "t-shirt",
@@ -61,6 +71,79 @@ const fetchAllProducts = async () => {
     console.log(error);
   }
 };
+const fetchBestCategoryProducts = async () => {
+  try {
+    const { status, data } = await axios.get(
+      "http://localhost:8000/api/product"
+    );
+    // console.log("hello", data.message);
+    if (status === 200) {
+      data.message.forEach((product) => {
+        document.querySelector(
+          ".best_category_products_card_container"
+        ).innerHTML += ` <div class="best_category_products_card">
+        <div class="best_category_product_card_img_wrapper">
+            <img src=${product.image} alt="pant">
+        </div>
+        <div class="best_category_product_card_details">
 
+            <p class="best_category_product_name">${product.name}</p>
+         
+            <h3 class="best_category_product_price">Rs. ${product.price}</h3>
+        </div>
+      
+    </div>`;
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+const fetchSessinUser = async () => {
+  try {
+    axiosInstance.get("/user/sessionUser");
+  } catch (error) {}
+};
+const getLoginUser = () => {
+  let user = localStorage.getItem("user");
+  if (user) {
+    user = JSON.parse(user);
+  }
+  return user ?? null;
+};
+
+const handleLogout = () => {
+  localStorage.setItem("user", null);
+  location.reload();
+};
+const addUserDataInNavbar = () => {
+  const user = getLoginUser();
+  console.log(user);
+  if (user) {
+    document.querySelector(".logoutButton").style.display = "flex";
+    document.querySelector(".navCartButton").style.display = "block";
+    document.querySelector(".profile_wrapper").style.display = "flex";
+    document.querySelector(".username").innerText = user.username;
+    document.querySelector(".useremail").innerText = user.email;
+    avatar.src = user.image;
+
+    document
+      .querySelector(".logoutButton")
+      .addEventListener("click", handleLogout);
+    if (user.isAdmin) {
+      window.location.href =
+        "http://127.0.0.1:5500/frontend/public/html/adminDashboard.html";
+    }
+  } else {
+    document.querySelector(".navCartButton").style.display = "none";
+    document.querySelector(".profile_wrapper").style.display = "none";
+    document.querySelector(".navbar_button_wrapper").style.display = "flex";
+    document.querySelector(".logoutButton").style.display = "none";
+  }
+};
+
+addUserDataInNavbar();
 fetchCategoryItems();
 fetchAllProducts();
+fetchBestCategoryProducts();
+fetchSessinUser();

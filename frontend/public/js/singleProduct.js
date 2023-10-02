@@ -63,10 +63,24 @@ let getLs = () => {
 };
 let setLs = (cart) => {
   const prev = getLs();
-  let allCartData = [...prev, cart];
-  localStorage.setItem("cart", JSON.stringify(allCartData));
+
+  const prevCart = prev.find((c) => c._id === cart._id);
+
+  if (prevCart) {
+    const updatedCart = prev.map((c) => {
+      if (c._id === cart._id) {
+        console.log(c.buyQuantity + quantity);
+        return { ...cart, buyQuantity: c.buyQuantity + quantity };
+      } else {
+        return c;
+      }
+    });
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  } else {
+    let allCartData = [...prev, cart];
+    localStorage.setItem("cart", JSON.stringify(allCartData));
+  }
 };
-console.log(cart);
 
 buyBtn.addEventListener("click", async () => {
   let newOrder = {

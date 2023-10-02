@@ -31,6 +31,7 @@ const updateUser = async (req, res, next) => {
 const getSessionUser = async (req, res, next) => {
   try {
     const loggedInUser = req.session.user;
+    console.log(req.session);
     if (loggedInUser) {
       res.status(200).json({ message: loggedInUser });
     } else {

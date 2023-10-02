@@ -11,6 +11,28 @@
 :root{
     --main_color:#FF9800;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(182, 182, 182); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #474747; 
+  }
 /* navbar styling  */
 #navbar{
 
@@ -58,11 +80,15 @@
     right: 5px;
 }
 .navbar_button_wrapper{
-    display: flex;
-    
+    display: none;
+
     gap: 1rem;
     align-items: center;
   
+}
+.logoutButton{
+    display: none;
+    
 }
 .navbar_button_wrapper button{
     padding: 8px 12px;
@@ -74,7 +100,31 @@
     background-color: white;
     letter-spacing: 1px;
 }
+.profile_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+}
+.profile_wrapper img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.logoutButton {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.username{
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+.useremail{
+    font-size: 12px;
+}
 /* main container  */
 .main_container{
   
@@ -175,15 +225,19 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
-    
+    height: 50px;
 }
 .best_category_product_name{
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 1px;
+
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .best_category_product_price{
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 0.9px;
 }
 
