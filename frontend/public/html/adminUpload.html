@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/adminUpload.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/uploadAdmin.js"></script>
 </head>
 <body>
   <div id="navbar">
@@ -55,7 +56,7 @@
 </div>
     <div class="uploadContainer">
 
-        <form class="form">
+        <form class="form" id="uploadForm" >
         <div class="formHeader">
   
       <IoMdCloudUpload/>  
@@ -118,8 +119,8 @@
           <div class="inputItem">
   
           <label>Upload Image</label>
-
-          <IoMdCloudUpload class="uploadIcon" />
+            <input type="file" class="uploadInput" style="display: none;">
+            <button class="selectImage">Browser image</button>
     </div>
           <button type="submit" class="uploadBtn">Upload</button>
         
