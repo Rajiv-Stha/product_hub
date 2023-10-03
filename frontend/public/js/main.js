@@ -1,4 +1,15 @@
 let avatar = document.querySelector(".avatar_img");
+
+const checkIfToShowLoginToast = () => {
+  const isTrue = localStorage.getItem("first");
+  if (isTrue) {
+    showToast("success", "successfully logged in");
+    localStorage.removeItem("first");
+  }
+};
+
+checkIfToShowLoginToast();
+
 const axiosInstance = axios.create({
   baseURL: "http://localhost:8000/api",
   withCredentials: true,
@@ -114,7 +125,10 @@ const getLoginUser = () => {
 
 const handleLogout = () => {
   localStorage.setItem("user", null);
-  // location.reload();
+  showToast("success", "Logged out successfully");
+  setTimeout(() => {
+    location.reload();
+  }, 2000);
 };
 const addUserDataInNavbar = () => {
   const user = getLoginUser();
@@ -130,10 +144,7 @@ const addUserDataInNavbar = () => {
     document
       .querySelector(".logoutButton")
       .addEventListener("click", handleLogout);
-    if (user.isAdmin) {
-      window.location.href =
-        "http://127.0.0.1:5500/frontend/public/html/adminDashboard.html";
-    }
+    const currentUrl = location.href;
   } else {
     document.querySelector(".navCartButton").style.display = "none";
     document.querySelector(".profile_wrapper").style.display = "none";

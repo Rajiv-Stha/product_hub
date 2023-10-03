@@ -11,10 +11,9 @@
   
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     
-    
-
+  <script defer src="./public/js/toast.js"></script>
+  <script defer src="./public/js/main.js"></script>
 </head>
 <body>
 
@@ -32,11 +31,6 @@
               
             </div>
             <div class="navbar_button_wrapper">
-                <a class="navCartButton" href="./public/html/cart.html">
-
-                    <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
-                 
-                </a>
               
 
                 <a href="./public/html/login.html">
@@ -48,6 +42,12 @@
                 </a>
             </div>
             <div class="profile_wrapper">
+              <a class="navCartButton" href="./public/html/cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
+
                 <img class="avatar_img" src="" alt="avatar">
                 <div>
                     <h3 class="username"></h3>
@@ -101,7 +101,12 @@
     </div>
     
 </body>
-<script src="./public/js/main.js"></script>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
       var swiper = new Swiper(".mySwiper", {
@@ -122,6 +127,7 @@
       });
     </script>
   <script>
+
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         centeredSlides: true,

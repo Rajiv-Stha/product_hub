@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/adminOrder.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/AdminAllOrders.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -39,6 +40,11 @@
             </a>
         </div>
         <div class="profile_wrapper">
+            <a class="navCartButton" href="./cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
             <img class="avatar_img" src="" alt="avatar">
             <div>
                 <h3 class="username"></h3>
@@ -73,14 +79,14 @@
         <div class="admin_order_content">
             <h2>Order</h2>
             <div class="admin_order_type_box">
-                <a href="./adminPendingOrder.html" class="admin_order_pending_link active">
+                <p data-status="pending" href="./adminPendingOrder.html" class="admin_order_pending_link active statusTab">
                     Pending Order
-                </a>
-                <a href="./adminDispatchedOrder.html" class="admin_order_dispatched_link">
+                </p>
+                <p  data-status="dispatched" href="./adminDispatchedOrder.html" class="admin_order_dispatched_link statusTab">
                     Dispatched Order
 
-                </a>
-                <a href="./adminDeliveredOrder.html" class="admin_order_delivered_link">Delivered Order</a>
+                </p>
+                <p data-status="delivered" class="admin_order_delivered_link statusTab">Delivered Order</p>
 
             </div>
             <div class="admin_order_details">
@@ -92,25 +98,13 @@
                             <th>Client name</th>
                             <th>Client email</th>
                             <th>Price</th>
-                            <th>Data</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>213</td>
-                            <td>Rajiv Shrestha</td>
-                            <td>rajiv123@gmail.com</td>
-                            <td>Rs. 4300</td>
-                            <td>03/04/2023</td>
-                        </tr>
-                        <tr>
-                            <td>213</td>
-                            <td>Rajiv Shrestha</td>
-                            <td>rajiv123@gmail.com</td>
-                            <td>Rs. 4300</td>
-                            <td>03/04/2023</td>
-                        </tr>
+                    <tbody class="orderAllList">
+                      
+                        
+                      
                     </tbody>
                 </table>
             </div>

@@ -27,8 +27,10 @@ const handleLogin = async (e) => {
     password.value = "";
     if (status === 200) {
       localStorage.setItem("user", JSON.stringify(data.message));
+      // await showToast("success", "logged in successfully");
+      localStorage.setItem("first", JSON.stringify(true));
+
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
-      toastr.success("logged in successfully");
     }
   } catch (error) {
     console.log(error.message);

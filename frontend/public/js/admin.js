@@ -35,16 +35,15 @@ const fetchAdminProducts = async () => {
   }
 };
 const handleAdminCartDelete = async (id) => {
-  toastr.info("Are you the 6 fingered man?");
-  //   try {
-  //     const { data, status } = await axios.delete(
-  //       `http://localhost:8000/api/product/${id}`
-  //     );
-  //     if (status === 200) {
-  //       alert("hello");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
+  try {
+    const { data, status } = await axios.delete(
+      `http://localhost:8000/api/product/${id}`
+    );
+    if (status === 200) {
+      alert("hello");
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 fetchAdminProducts();

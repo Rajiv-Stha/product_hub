@@ -74,6 +74,7 @@
 .admin_dashboard_table tbody tr td{
     padding: 10px;
 
+    font-size: 12px;
 }
 /* .admin_dashboard_order_status{
     background-color: rgba(50, 214, 0, 0.228);

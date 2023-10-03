@@ -16,7 +16,7 @@ document.querySelector(".selectImage").addEventListener("click", () => {
 console.log(document.querySelector("#uploadForm"));
 document.querySelector("#uploadForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  alert("helo");
+  // alert("helo");
 
   let user = getLoginUserFromLs();
   if (!user) return;
@@ -30,11 +30,19 @@ document.querySelector("#uploadForm").addEventListener("submit", async (e) => {
   uploadPayload.owner = user._id;
 
   try {
-    const { data, response } = await axios.post(
+    const { data, status } = await axios.post(
       "http://localhost:8000/api/product/create",
       uploadPayload
     );
     console.log(data, "img");
+    if (status === 200) {
+      document.querySelector("#name").value = "";
+      document.querySelector("#desc").value = "";
+      document.querySelector("#price").value = "";
+      document.querySelector("#quantity").value = "";
+      document.querySelector("#cateogory").value = "";
+      showToast("success", "uploaded successfully");
+    }
   } catch (error) {
     console.log(error);
   }
@@ -47,3 +55,17 @@ const getLoginUserFromLs = () => {
   }
   return user ?? null;
 };
+
+const fetchCategory = async () => {
+  const { data, status } = await axios.get(
+    "http://localhost:8000/api/category"
+  );
+  if (status === 200) {
+    data.message.forEach((option) => {
+      document.querySelector("#cateogory").innerHTML += `
+      <option value=${option.categoryName}>${option.categoryName}</option>`;
+    });
+  }
+  console.log(data.message);
+};
+fetchCategory();

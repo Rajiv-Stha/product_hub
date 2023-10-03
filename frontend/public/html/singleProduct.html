@@ -6,7 +6,9 @@
     <title>Product </title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/singleProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="../js/toast.js"></script>
     <script defer src="../js/main.js"></script>
     <script defer src="../js/singleProduct.js"></script>
     
@@ -42,6 +44,11 @@
             </a>
         </div>
         <div class="profile_wrapper">
+            <a class="navCartButton" href="./cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
             <img class="avatar_img" src="" alt="avatar">
             <div>
                 <h3 class="username"></h3>
@@ -95,5 +102,9 @@
         </div>
     </div>
       </div>
+          <!-- script for toast  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 </html>

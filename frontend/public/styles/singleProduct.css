@@ -33,6 +33,12 @@
     width: 100%;
 
 }
+
+.disabled{
+    opacity: 0.4;
+    cursor: not-allowed !important;
+}
+
 .single_product_main_image{
     height: 100%;
     width: 100%;
@@ -49,7 +55,7 @@
 .single_product_sub_image{
     height: 100px;
     width: 100%;
-    background-color: rgb(189, 189, 194);
+    background-color: rgb(242, 241, 241);
     object-fit: cover;
 }
 .single_product_details_box{

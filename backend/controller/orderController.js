@@ -2,15 +2,18 @@ const orderModel = require("../models/orderModel");
 
 const createOrder = async (req, res, next) => {
   try {
-    const newOrder = await orderModel.create(req.body);
-    return res.status(200).json({ message: newOrder, success: true });
+    await orderModel.create(req.body);
+    next();
   } catch (error) {
     next(error);
   }
 };
 const getOrder = async (req, res, next) => {
   try {
-    const allOrder = await orderModel.find({ ...req.query });
+    let allOrder = await orderModel
+      .find({ ...req.query })
+      .populate(["buyer", "product"]);
+
     return res.status(200).json({ message: allOrder, success: true });
   } catch (error) {
     next(error);

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/adminDashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="../js/main.js"></script> 
+    <script defer src="../js/adminDashboard.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -39,6 +40,11 @@
             </a>
         </div>
         <div class="profile_wrapper">
+            <a class="navCartButton" href="./cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
             <img class="avatar_img" src="" alt="avatar">
             <div>
                 <h3 class="username"></h3>
@@ -99,23 +105,7 @@
             <div class="admin_dashboard_latest_orders">
                 <h2>Latest Orders</h2>
                 <table class="admin_dashboard_table">
-                    <tbody>
-                        <tr>
-                            <td>213</td>
-                            <td>Rajiv shrestha</td>
-                            <td>Rajiv@gmail.com</td>
-                            <td>Rs. 540</td>
-                            <td class="admin_dashboard_order_status">Delivered</td>
-                            <td>07/06/2023</td>
-                        </tr>
-                        <tr>
-                            <td>213</td>
-                            <td>Rajiv shrestha</td>
-                            <td>Rajiv@gmail.com</td>
-                            <td>Rs. 540</td>
-                            <td class="admin_dashboard_order_status">Cancelled</td>
-                            <td>07/06/2023</td>
-                        </tr>
+                    <tbody class="orderList">
                     </tbody>
                 </table>
             </div>

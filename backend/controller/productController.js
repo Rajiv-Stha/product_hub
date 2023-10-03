@@ -9,6 +9,24 @@ const createProduct = async (req, res, next) => {
     next(error);
   }
 };
+const reduceQuantityOfProduct = async (req, res, next) => {
+  const { product, quantity } = req.body;
+  try {
+    await productModel.findByIdAndUpdate(
+      product,
+      {
+        $inc: { quantity: -quantity },
+      },
+      {
+        new: true,
+        returnDocument: true,
+      }
+    );
+    res.status(200).json({ message: "transaction successfull", success: true });
+  } catch (error) {
+    next(error);
+  }
+};
 
 const getProduct = async (req, res, next) => {
   const { category, _id } = req.query;
@@ -56,4 +74,10 @@ const deleteProduct = async (req, res, next) => {
   }
 };
 
-module.exports = { createProduct, getProduct, updateProduct, deleteProduct };
+module.exports = {
+  createProduct,
+  reduceQuantityOfProduct,
+  getProduct,
+  updateProduct,
+  deleteProduct,
+};

@@ -24,7 +24,6 @@ const handleSignup = async (e) => {
       "http://localhost:8000/api/auth/register",
       signupPayload
     );
-    console.log(data);
 
     username.value = "";
     email.value = "";

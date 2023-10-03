@@ -33,9 +33,20 @@ const displayProductData = () => {
     productData?.name;
   document.querySelector(".single_product_main_image").src = productData.image;
   document.querySelector(".single_product_desc").innerText = productData.desc;
-  document.querySelector(".single_product_price").innerText = productData.price;
+  document.querySelector(
+    ".single_product_price"
+  ).innerText = `Rs.${productData.price}`;
+
+  if (productData.quantity <= -1) {
+    addToCartBtn.classList.add("disabled");
+    buyBtn.classList.add("disabled");
+    buyBtn.setAttribute("disabled", "true");
+    addToCartBtn.setAttribute("disabled", "true");
+    document.querySelector(".single_product_quantity_box").style.display =
+      "none";
+  }
   document.querySelector(".single_product_stock").innerText =
-    productData.quantity;
+    productData.quantity <= 0 ? "Empty" : productData.quantity;
   quantityValue.innerText = quantity;
 };
 
@@ -53,6 +64,7 @@ minusBtn.addEventListener("click", () => {
 
 addToCartBtn.addEventListener("click", () => {
   setLs({ ...productData, buyQuantity: quantity });
+  showToast("success", "Added to cart");
 });
 let getLs = () => {
   let cartData = localStorage.getItem("cart");
@@ -83,8 +95,14 @@ let setLs = (cart) => {
 };
 
 buyBtn.addEventListener("click", async () => {
+  const user = getLoginUser();
+  if (productData.quantity <= 0) {
+    alert("Not in stock");
+    return;
+  }
+  if (!user) return;
   let newOrder = {
-    buyer: "6512c870c0ef27ad319b04ea",
+    buyer: user._id,
     quantity: quantity,
     product: productId,
     totalPrice: quantity * productData.price,
@@ -94,6 +112,10 @@ buyBtn.addEventListener("click", async () => {
       "http://localhost:8000/api/order/create",
       newOrder
     );
+    if (status === 200) {
+      // showToast("success", "Bought successfully");
+    }
+    location.reload();
     console.log(data);
   } catch (error) {
     console.log(error.message);
