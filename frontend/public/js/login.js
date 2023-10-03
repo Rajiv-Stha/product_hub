@@ -28,6 +28,7 @@ const handleLogin = async (e) => {
     if (status === 200) {
       localStorage.setItem("user", JSON.stringify(data.message));
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
+      toastr.success("logged in successfully");
     }
   } catch (error) {
     console.log(error.message);

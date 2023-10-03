@@ -2,26 +2,45 @@ let uploadPayload = {
   name: "",
   desc: "",
   owner: "",
+  price: "",
+  image:
+    "https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp",
+  quantity: "",
+  category: "",
 };
 
 document.querySelector(".selectImage").addEventListener("click", () => {
   document.querySelector(".uploadInput").click();
 });
 
-document.querySelector("#uploadForm").addEventListener("submit", (e) => {
+console.log(document.querySelector("#uploadForm"));
+document.querySelector("#uploadForm").addEventListener("submit", async (e) => {
   e.preventDefault();
+  alert("helo");
 
+  let user = getLoginUserFromLs();
+  if (!user) return;
   //   uploadPayload.name = document.value
   // uploadPayload.desc= document.qsl
-
-  let user = getLoginUser();
-  if (!user) return;
+  uploadPayload.name = document.querySelector("#name").value;
+  uploadPayload.desc = document.querySelector("#desc").value;
+  uploadPayload.price = document.querySelector("#price").value;
+  uploadPayload.quantity = document.querySelector("#quantity").value;
+  uploadPayload.category = document.querySelector("#cateogory").value;
   uploadPayload.owner = user._id;
 
-  //   axios.post("")
+  try {
+    const { data, response } = await axios.post(
+      "http://localhost:8000/api/product/create",
+      uploadPayload
+    );
+    console.log(data, "img");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
-const getLoginUser = () => {
+const getLoginUserFromLs = () => {
   let user = localStorage.getItem("user");
   if (user) {
     user = JSON.parse(user);

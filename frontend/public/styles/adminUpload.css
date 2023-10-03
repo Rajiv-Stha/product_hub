@@ -100,9 +100,25 @@ input, select{
     cursor: pointer;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.selectImage{
+    display: flex;
+    font-size: 12px;
+    width: fit-content;
+    height: 50px;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--main_color);
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    gap: 10px;
+}
 .uploadIcon{
-    font-size: 25px;
     color: rgba(193, 193, 193, 0.683);
+    font-size: 25px;
 }
 .uploadImage p{
     font-size: 10px;

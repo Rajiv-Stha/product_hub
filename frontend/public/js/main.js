@@ -114,7 +114,7 @@ const getLoginUser = () => {
 
 const handleLogout = () => {
   localStorage.setItem("user", null);
-  location.reload();
+  // location.reload();
 };
 const addUserDataInNavbar = () => {
   const user = getLoginUser();
