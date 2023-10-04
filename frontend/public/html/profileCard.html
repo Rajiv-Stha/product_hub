@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../styles/style.css">
     <script defer src="../js/toast.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script defer src="../js/profileCard.js"></script>
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/profileCard.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -20,7 +20,7 @@
             <div class="navbar_input_wrapper">
 
           <input type="text" placeholder="Search"/>
-          <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
+          <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn " >
         
           
         </div>
@@ -64,12 +64,12 @@
 
     <div class="profile_card">
         <div class="profile_header">
-        <img width="32" height="32" src="https://img.icons8.com/windows/32/user-male-circle.png" alt="user-male-circle"/>
+        <img width="32" height="32" src="https://img.icons8.com/windows/32/user-male-circle.png"  alt="user-male-circle"/>
         <h2>Account Preferences</h2>
         </div>
         <div class="avatar_box">
           <!-- <input type="file"/> -->
-          <img src="../images/slider1.jpg" alt="avatar" class="avatar_logo" />
+          <img src="../images/slider1.jpg" alt="avatar" class="avatar_logo profileCardImg" />
           <div class="avatar_btn">
               <button class="avatar_header_btns" >
                   Change
@@ -81,7 +81,7 @@
           <div class="inputItem">
   
           <label class="labelName" >Username</label>
-          <input type="text" name="username" placeholder="Enter username"/>
+          <input type="text" name="username" id="profileCardUsername" placeholder="Enter username"/>
           </div>
           <div class="inputItem">
   
