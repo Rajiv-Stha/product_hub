@@ -1,3 +1,4 @@
+// initializing the orderTab
 let orderTab = "pending";
 
 const fetchAdminProductsByStatus = async () => {

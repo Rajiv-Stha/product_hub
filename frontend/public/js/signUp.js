@@ -31,13 +31,33 @@ const handleSignup = async (e) => {
     password.value = "";
     confirmPassword.value = "";
     if (status === 200) {
-      window.location.href =
-        "http://127.0.0.1:5500/frontend/public/html/login.html";
+      setTimeout(() => {
+        window.location.href =
+          "http://127.0.0.1:5500/frontend/public/html/login.html";
+      }, 2000);
+      showToast("success", "successfully registered");
     }
   } catch (error) {
     console.log(error.message);
   }
 };
+
+const fetchCountry = async () => {
+  try {
+    const { data, status } = await axios.get(
+      "https://restcountries.com/v3.1/all"
+    );
+    console.log(data);
+    data.forEach((country) => {
+      document.querySelector(
+        "#signup_select"
+      ).innerHTML += ` <option value="${country.name.common}">${country.name.common}</option>`;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchCountry();
 
 document.querySelector("#signupForm").addEventListener("submit", handleSignup);
 console.log(document.querySelector("#signupForm"));

@@ -1,3 +1,4 @@
+// this function fetches all orders
 const fetchAllOrders = async () => {
   try {
     const { data, status } = await axios.get("http://localhost:8000/api/order");
@@ -19,5 +20,5 @@ const fetchAllOrders = async () => {
     console.log(error);
   }
 };
-
+// calling the function
 fetchAllOrders();

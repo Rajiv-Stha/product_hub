@@ -113,9 +113,9 @@ buyBtn.addEventListener("click", async () => {
       newOrder
     );
     if (status === 200) {
-      // showToast("success", "Bought successfully");
+      showToast("success", "Bought successfully");
+      getProductById();
     }
-    location.reload();
     console.log(data);
   } catch (error) {
     console.log(error.message);

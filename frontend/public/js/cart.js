@@ -2,6 +2,7 @@ const cartContainer = document.querySelector(".cart_items");
 const subTotalPrice = document.querySelector(".sub_total_price");
 let cartTotalPrice = document.querySelector(".cartTotalPrice");
 
+// getting data from local storage
 let getLs = () => {
   let cartData = localStorage.getItem("cart");
   if (cartData) {
@@ -39,7 +40,7 @@ const displayCart = () => {
 };
 
 displayCart();
-
+// deletes cart from localStorage
 const removeCartFromLs = (deletedId) => {
   let allCart = getLs();
   const filteredCart = allCart.filter((cart) => cart._id !== deletedId);
@@ -47,6 +48,7 @@ const removeCartFromLs = (deletedId) => {
 };
 const handleDeleteCart = (id) => {
   // console.log(cart);
+  showToast("success", "deleted successfully");
   removeCartFromLs(id);
   displayCart();
   displayCheckOutPrice();

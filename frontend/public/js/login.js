@@ -33,7 +33,8 @@ const handleLogin = async (e) => {
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
     }
   } catch (error) {
-    console.log(error.message);
+    showToast("error", error.response.data.message);
+    // console.log(error.response.data.message);
   }
 };
 

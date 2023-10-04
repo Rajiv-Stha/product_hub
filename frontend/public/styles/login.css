@@ -87,3 +87,52 @@
     font-size: 13px;
     text-decoration: underline;
 }
+
+/* media query */
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    .login_content {
+        width: 55%;
+    }
+}
+@media screen  and (min-width:600px) and (max-width:768px){
+    .login_content {
+        width: 55%;
+    }
+}
+@media screen  and (min-width:480px) and (max-width:600px){
+    .login_content {
+        width: 60%;
+    }
+    .login_input_box label {
+        font-size: 12px;
+    }
+    .linkToSignUp {
+        font-size: 11px;
+    }
+    .login_btn {
+        font-size: 14px;
+    }
+}
+@media screen  and (max-width:480px){
+    .login_heading {
+       
+        font-size: 17px;
+    }
+    .login_content {
+
+        width: 90%;
+    }
+    .login_input_box label {
+        font-size: 11px;
+    }
+    .login_btn {
+        font-size: 13px;
+    }
+    .login_input_box input::placeholder{
+        font-size: 10px;
+    }
+    .linkToSignUp {
+        font-size: 10px;
+        
+    }
+}

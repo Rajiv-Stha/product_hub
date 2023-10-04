@@ -327,6 +327,9 @@
   }
 /* media query */
 @media only screen and (min-width: 769px) and (max-width: 992px){
+    #navbar{
+        gap: 10px;
+    }
     .navbar_heading{
         font-size: 17px;
     }
@@ -334,12 +337,34 @@
     .navbar_search_btn {
         width: 18px;
     }
+    .profile_wrapper img {
+        width: 25px;
+        height: 25px;
+    }
     .navbar_button_wrapper a img{
         width: 20px;
         height: 20px;
     }
     .navbar_button_wrapper a button{
         font-size: 11px;
+    }
+    .category_box {
+        flex: 2.5;
+    }
+    .hero_section {
+        height: 280px;
+    }
+    .best_category_products_card {
+        min-width: 190px;
+        width: 190px;
+
+    }
+    .best_category_product_card_img_wrapper {
+        height: 160px;
+    }
+    .all_products_card {
+        width: 190px;
+
     }
 }
 

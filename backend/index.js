@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
+
 app.use(express.json());
+
 require("dotenv").config();
 // console.log(process.env.MONGO_URI);
 require("./utils/db")();

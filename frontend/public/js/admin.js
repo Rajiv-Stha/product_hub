@@ -1,3 +1,4 @@
+// fetching all products in the admin panel
 const fetchAdminProducts = async () => {
   try {
     const { status, data } = await axios.get(
@@ -34,6 +35,8 @@ const fetchAdminProducts = async () => {
     console.log(error);
   }
 };
+
+// deleting the product card from the database
 const handleAdminCartDelete = async (id) => {
   try {
     const { data, status } = await axios.delete(

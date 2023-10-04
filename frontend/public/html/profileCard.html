@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/profileCard.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script defer src="../js/toast.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="../js/profileCard.js"></script>
+    <script defer src="../js/main.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="http://127.0.0.1:5500/frontend/index.html">
+
+            <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
+        </a>
+            <div class="navbar_input_wrapper">
+
+          <input type="text" placeholder="Search"/>
+          <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
+        
+          
+        </div>
+        <div class="navbar_button_wrapper">
+            <a class="navCartButton" href="./cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
+          
+
+            <a href="./login.html">
+                <button class="navbar_login_btn">Login</button>
+            </a>
+            <a href="./signUp.html">
+
+                <button>Sign up</button>
+            </a>
+        </div>
+        <div class="profile_wrapper">
+            <a class="navCartButton" href="./cart.html">
+
+                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
+             
+            </a>
+            <img class="avatar_img" src="" alt="avatar">
+            <div>
+                <h3 class="username"></h3>
+                <p class="useremail"></p>
+            </div>
+            <button class="logoutButton">
+                <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="exit--v1"/>
+            </button>
+        </div>
+
+      
+
+       
+    </div>
+    <div class="profileCard_container">
+
+    <div class="profile_card">
+        <div class="profile_header">
+        <img width="32" height="32" src="https://img.icons8.com/windows/32/user-male-circle.png" alt="user-male-circle"/>
+        <h2>Account Preferences</h2>
+        </div>
+        <div class="avatar_box">
+          <!-- <input type="file"/> -->
+          <img src="../images/slider1.jpg" alt="avatar" class="avatar_logo" />
+          <div class="avatar_btn">
+              <button class="avatar_header_btns" >
+                  Change
+                  </button>
+
+          </div>
+        </div>
+        <form class="form">
+          <div class="inputItem">
+  
+          <label class="labelName" >Username</label>
+          <input type="text" name="username" placeholder="Enter username"/>
+          </div>
+          <div class="inputItem">
+  
+  <label class="labelName">Country</label>
+  <select class="profileCard_select" id="signup_select" >
+      <option value="choose">choose country</option>
+      <!-- <option value="Nepal">Nepal</option> -->
+  </select>
+  </div>
+  
+         
+        </form>
+        <div class="btn_wrapper">
+          <button class="cancel_btn">Cancel</button>
+          <button class="update_btn">Update</button>
+        </div>
+      </div>
+    </div>
+
+            <!-- script for toast  -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+</body>
+</html>
