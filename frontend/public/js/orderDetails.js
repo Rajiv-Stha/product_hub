@@ -31,7 +31,7 @@ const displayOrderData=(data)=>{
         
                <tr>
                                     <td class="order_details_item_name_box">
-                                        <img  src=${product?.product?.image} alt="item">
+                                        <img  src=${product?.product?.image[0]} alt="item">
                                         <p>${product?.product?.name}</p>
                                     </td>
                                     <td>${product?.buyQuantity}</td>

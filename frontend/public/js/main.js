@@ -97,7 +97,7 @@ const fetchBestCategoryProducts = async () => {
       data.message.forEach((product) => {
         document.querySelector(
           ".best_category_products_card_container"
-        ).innerHTML += ` <div class="best_category_products_card">
+        ).innerHTML += ` <a   href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${product._id}" class="best_category_products_card">
         <div class="best_category_product_card_img_wrapper">
             <img src=${product.image[0]} alt="pant">
         </div>
@@ -108,7 +108,7 @@ const fetchBestCategoryProducts = async () => {
             <h3 class="best_category_product_price">Rs. ${product.price}</h3>
         </div>
       
-    </div>`;
+    </a>`;
       });
     }
   } catch (error) {

@@ -43,7 +43,7 @@ const fetchAllProductsInProductAllPage=async()=>{
                 
                             <div class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
-                        <img src=${p.image} alt="pant">
+                        <img src=${p.image[0]} alt="pant">
                     </div>
                     <div class="category_card_content_box_details">
             
@@ -76,7 +76,7 @@ const fetchDataByCategoryName=async()=>{
                 
                             <div class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
-                        <img src=${p.image} alt="pant">
+                        <img src=${p.image[0]} alt="pant">
                     </div>
                     <div class="category_card_content_box_details">
             
@@ -127,7 +127,7 @@ const searchProduct=async()=>{
                 
                             <div class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
-                        <img src=${p.image} alt="pant">
+                        <img src=${p.image[0]} alt="pant">
                     </div>
                     <div class="category_card_content_box_details">
             
