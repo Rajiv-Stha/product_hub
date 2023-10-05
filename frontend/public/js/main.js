@@ -71,7 +71,7 @@ const fetchAllProducts = async () => {
           ".allProducts_card_container"
         ).innerHTML += ` <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${product._id}" class="all_products_card">
         <div class="all_product_card_img_wrapper">
-            <img src=${product.image} alt="pant">
+            <img src=${product.image[0]} alt="pant">
         </div>
         <div class="all_product_card_details">
 
@@ -99,7 +99,7 @@ const fetchBestCategoryProducts = async () => {
           ".best_category_products_card_container"
         ).innerHTML += ` <div class="best_category_products_card">
         <div class="best_category_product_card_img_wrapper">
-            <img src=${product.image} alt="pant">
+            <img src=${product.image[0]} alt="pant">
         </div>
         <div class="best_category_product_card_details">
 

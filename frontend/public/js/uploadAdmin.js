@@ -3,17 +3,20 @@ let uploadPayload = {
   desc: "",
   owner: "",
   price: "",
-  image:
-    "https://np-live-21.slatic.net/kf/S0f0c6c006f364fed9911723609f6e9f85.jpg_300x0q75.webp",
+  image:[],
   quantity: "",
   category: "",
 };
 
-document.querySelector(".selectImage").addEventListener("click", () => {
-  document.querySelector(".uploadInput").click();
-});
 
-console.log(document.querySelector("#uploadForm"));
+const cloudName = "codewithmama"; // replace with your own cloud name
+const uploadPreset = "wrapfileImg"; // replace with your own upload preset
+
+
+
+
+
+
 document.querySelector("#uploadForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   // alert("helo");
@@ -68,4 +71,42 @@ const fetchCategory = async () => {
   }
   console.log(data.message);
 };
+
+const previewImages=()=>{
+uploadPayload.image.forEach(img=>{
+  document.querySelector(".productImagePreview").innerHTML+=`
+    <img src=${img} alt="productImg"/>
+  `
+})
+
+
+}
+
+const myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: cloudName,
+    uploadPreset: uploadPreset,
+    multiple: true,  //restrict upload to a single file
+    sources: [ "local"],
+   
+  },
+  (error, result) => {
+    if (!error && result && result.event === "success") {
+      uploadPayload.image.push(result.info.secure_url);
+       document.querySelector(".productImagePreview").innerHTML+=`
+    <img src=${result.info.secure_url} alt="productImg"/>
+  `
+    }
+  }
+);
+
+document.querySelector(".selectImage").addEventListener(
+  "click",
+  function () {
+    myWidget.open();
+  },
+  false
+);
+
+
 fetchCategory();

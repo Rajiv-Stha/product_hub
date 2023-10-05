@@ -31,11 +31,20 @@ const displayProductData = () => {
   }
   document.querySelector(".single_product_heading").innerText =
     productData?.name;
-  document.querySelector(".single_product_main_image").src = productData.image;
+  document.querySelector(".single_product_main_image").src = productData.image[0];
   document.querySelector(".single_product_desc").innerText = productData.desc;
   document.querySelector(
     ".single_product_price"
   ).innerText = `Rs.${productData.price}`;
+
+  productData.image.forEach((i,ind)=>{
+    if(ind===0)return;
+    document.querySelector(".single_product_sub_image_wrapper").innerHTML +=`
+                        <img src=${i} alt="product_img" class="single_product_sub_image">
+  
+    `
+  })
+  
 
   if (productData.quantity <= -1) {
     addToCartBtn.classList.add("disabled");
