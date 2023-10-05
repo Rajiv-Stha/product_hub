@@ -1,0 +1,1 @@
+when clicked to best category product redirect to single page 

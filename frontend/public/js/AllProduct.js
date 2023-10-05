@@ -9,7 +9,6 @@ const displayActiveCatTab=()=>{
   console.log(document.querySelectorAll(".productCategoryTab"))
 document.querySelectorAll(".productCategoryTab").forEach(elm=>{
   let name = elm.innerText;
-  console.log(name)
   if(name===categoryName){
     elm.classList.add("category_card_li_active")
   }

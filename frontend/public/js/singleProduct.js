@@ -103,9 +103,9 @@ buyBtn.addEventListener("click", async () => {
   if (!user) return;
   let newOrder = {
     buyer: user._id,
-    quantity: quantity,
-    product: productId,
+    item: [{buyQuantity:quantity,product:productId}],
     totalPrice: quantity * productData.price,
+    quantity:0
   };
   try {
     const { data, status } = await axios.post(

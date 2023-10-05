@@ -1,5 +1,6 @@
 const e = require("express");
 const productModel = require("../models/productModel");
+const orderModel = require("../models/orderModel");
 
 const createProduct = async (req, res, next) => {
   try {
@@ -10,12 +11,14 @@ const createProduct = async (req, res, next) => {
   }
 };
 const reduceQuantityOfProduct = async (req, res, next) => {
-  const { product, quantity } = req.body;
+
+  const {  item:[{buyQuantity,product}] } = req.body;
+
   try {
     await productModel.findByIdAndUpdate(
       product,
       {
-        $inc: { quantity: -quantity },
+        $inc: { quantity: -buyQuantity },
       },
       {
         new: true,
@@ -74,6 +77,8 @@ const deleteProduct = async (req, res, next) => {
   }
 };
 
+
+
 const searchProduct =async(req,res,next)=>{
 
     try {
@@ -93,9 +98,44 @@ const searchProduct =async(req,res,next)=>{
       res.status(500).json({ message: error, success: false });
     }
 }
+
+
+
+const getAppStats=async(req,res,next)=>{
+
+  try {
+
+
+      const ProductCount = await productModel.find({}).count()
+      const OrdersCount = await orderModel.find({}).count()
+      const TotalSales = await orderModel.aggregate([
+        {
+            $group: {
+           _id: null,
+           grandTotal: {
+             $sum: "$totalPrice"
+            }
+       }
+      }
+      ])
+
+      res.status(200).json({message:{product:ProductCount,order:OrdersCount,sale:TotalSales[0].grandTotal}})
+
+
+
+  } catch (error) {
+
+    next(error)
+    
+
+
+  }
+}
+
 module.exports = {
   getProduct,
   createProduct,
+  getAppStats,
   updateProduct,
   deleteProduct,
   reduceQuantityOfProduct,

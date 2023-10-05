@@ -1,6 +1,13 @@
 // initializing the orderTab
 let orderTab = "pending";
 
+const goToOrderDetailsPage=(orderId)=>{
+
+  location.href = `http://127.0.0.1:5500/frontend/public/html/orderDetails.html?orderId=${orderId}`
+
+}
+
+
 const fetchAdminProductsByStatus = async () => {
   try {
     const { data, status } = await axios.get(
@@ -12,20 +19,22 @@ const fetchAdminProductsByStatus = async () => {
         document.querySelector(".orderAllList").innerHTML += `
         
         
-        <tr>
+        <tr onClick="goToOrderDetailsPage('${order._id}')">
         <td>${order._id}</td>
         <td>${order.buyer?.username}</td>
         <td>${order.buyer?.email}</td>
         <td>Rs.${order?.totalPrice}</td>
         <td> ${order.createdAt.split("T")[0]}  </td>
-    </tr>
-
+        </tr>
+        
+        
         
         `;
       });
     }
   } catch (error) {}
 };
+
 
 document.querySelectorAll(".statusTab").forEach((elm) => {
   elm.addEventListener("click", () => {
@@ -40,3 +49,4 @@ document.querySelectorAll(".statusTab").forEach((elm) => {
 });
 
 fetchAdminProductsByStatus();
+addClickEventToAllOrders()

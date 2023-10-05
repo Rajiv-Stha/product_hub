@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/orderDetail.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/orderDetails.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -85,7 +86,7 @@
                 <div class="order_details_date_wrapper">
                     <div class="order_details_date">
                         <img src="../icons/calendar.png" alt="calendar">
-                        <p>Wed, April 7, 2023, 4:43 PM</p>
+                        <p class="orderDetailsOrderTime"></p>
                     </div>
                     <div class="order_details_status_change_box">
                         <select class="order_details_status_select">
@@ -94,19 +95,19 @@
                             <option value="dispatched">Dispatched</option>
                             <option value="delivered">Delivered</option>
                         </select>
-                        <button>Save</button>
+                        <button class="orderDetailsSaveButton">Save</button>
                     </div>
                 </div>
                 <hr class="hr"/>
                 <div class="order_details_payment_box">
                     <div class="order_details_profile">
-                        <img src="../images/slider1.jpg" alt="profile">
+                        <img  class="customerImage" src="../images/slider1.jpg" alt="profile">
                         <div class="order_details_profile_details">
                             <h2>Customer</h2>
                             <div class="order_details_profile_para">
-                                <p>Rajiv Shrestha</p>
-                                <p>rajiv@gmail.com</p>
-                                <p>+977- 9821458930</p>
+                                <p class="customerUsername"></p>
+                                <p class="customerEmail"></p>
+                                <!-- <p>+977- 9821458930</p> -->
                             </div>
                         </div>
                     </div>
@@ -120,40 +121,15 @@
                                     <th>Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="order_details_item_name_box">
-                                        <img src="../images/slider.png" alt="item">
-                                        <p>Supreme helinox chair one</p>
-                                    </td>
-                                    <td>2</td>
-                                    <td>Rs. 540</td>
-                                    <td>Rs. 1080</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_details_item_name_box">
-                                        <img src="../images/slider.png" alt="item">
-                                        <p>Supreme helinox chair one</p>
-                                    </td>
-                                    <td>2</td>
-                                    <td>Rs. 540</td>
-                                    <td>Rs. 1080</td>
-                                </tr>
-                                <tr>
-                                    <td class="order_details_item_name_box">
-                                        <img src="../images/slider.png" alt="item">
-                                        <p>Supreme helinox chair one</p>
-                                    </td>
-                                    <td>2</td>
-                                    <td>Rs. 540</td>
-                                    <td>Rs. 1080</td>
-                                </tr>
+                            <tbody class="orderDetailsProductList">
+                         
+                         
                             </tbody>
                         </table>
                         <div class="order_details_item_payment_box">
                             <div class="order_details_item_sub_total_box">
                                 <p>Grand Total</p>
-                                <p>Rs.5349</p>
+                                <p class="orderDetailsGrandTotal">Rs.5349</p>
                             </div>
                         </div>
                     </div>
