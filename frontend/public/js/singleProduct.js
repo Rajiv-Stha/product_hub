@@ -36,7 +36,7 @@ const displayProductData = () => {
   document.querySelector(
     ".single_product_price"
   ).innerText = `Rs.${productData.price}`;
-
+      document.querySelector(".single_product_sub_image_wrapper").innerHTML =""
   productData.image.forEach((i,ind)=>{
     if(ind===0)return;
     document.querySelector(".single_product_sub_image_wrapper").innerHTML +=`
