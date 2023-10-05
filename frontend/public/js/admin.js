@@ -12,7 +12,7 @@ const fetchAdminProducts = async () => {
           ".admin_product_card_container"
         ).innerHTML += `<div class="admin_product_card">
             <div class="admin_product_card_img_wrapper">
-                <img src=${product.image} alt="productImg">
+                <img src=${product.image[0]} alt="productImg">
             </div>
             <div class="admin_product_card_detail">
 
