@@ -90,3 +90,24 @@
     font-size: 13px;
     text-decoration: underline;
 }
+
+
+/* media query */
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    .signup_content {
+        width: 50%;
+
+    }
+}
+@media screen  and (min-width:600px) and (max-width:768px){
+    .signup_content {
+        width: 70%;
+
+    }
+
+}
+@media screen  and (min-width:480px) and (max-width:600px){
+    .signup_content{
+        width: 80%s ;
+    }
+}

@@ -6,9 +6,11 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/adminProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/toast.js"></script>
     <script defer src="../js/admin.js"></script>
     
 
@@ -97,7 +99,8 @@
                   <img width="20" height="20" src="../icons/search.svg" alt="search--v1" class="navbar_search_btn"/>
                 </div>
                 <select class="admin_product_select">
-                    <option>category</option>
+                    <option value="choose" selected disabled>category</option>
+                    
                 </select>
                   
                     
@@ -110,8 +113,11 @@
             </div>
         </div>
     </div>
-    <link  rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <script   src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   
+            <!-- script for toast  -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     
 </body>
 </html>

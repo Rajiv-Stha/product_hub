@@ -1,10 +1,9 @@
 let avatar = document.querySelector(".avatar_img");
 
-document.querySelector(".navbar_search_btn").addEventListener("click",()=>{
- let searchQuery =   document.querySelector("#navSearchInput").value;
-  location.href = `http://127.0.0.1:5500/frontend/public/html/categoryCard.html?searchName=${searchQuery}`
-})
-
+document.querySelector(".navbar_search_btn").addEventListener("click", () => {
+  let searchQuery = document.querySelector("#navSearchInput").value;
+  location.href = `http://127.0.0.1:5500/frontend/public/html/categoryCard.html?searchName=${searchQuery}`;
+});
 
 const checkIfToShowLoginToast = () => {
   const isTrue = localStorage.getItem("first");
@@ -164,5 +163,3 @@ fetchCategoryItems();
 fetchAllProducts();
 fetchBestCategoryProducts();
 fetchSessinUser();
-
-

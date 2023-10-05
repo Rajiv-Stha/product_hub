@@ -167,6 +167,11 @@
 .category_list li{
     font-size: 13px;
 }
+.category_list li a{
+    display: block;
+    width: 100%;
+        padding: 3px;
+}
 .slider_box{
    
     flex: 10;

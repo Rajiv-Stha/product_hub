@@ -6,6 +6,7 @@ const fetchAdminProducts = async () => {
     );
     console.log(data.message, "hi");
     if (status === 200) {
+      document.querySelector(".admin_product_card_container").innerHTML = "";
       data.message.forEach((product) => {
         document.querySelector(
           ".admin_product_card_container"
@@ -43,10 +44,32 @@ const handleAdminCartDelete = async (id) => {
       `http://localhost:8000/api/product/${id}`
     );
     if (status === 200) {
-      alert("hello");
+      showToast("success", "deleted successfully");
+      setTimeout(() => {
+        fetchAdminProducts();
+      }, 2000);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// fetching category
+const fetchAllCategory = async () => {
+  try {
+    const { data, status } = await axios.get(
+      "http://localhost:8000/api/category"
+    );
+    if (status === 200) {
+      data.message.forEach((ca) => {
+        document.querySelector(".admin_product_select").innerHTML += `
+        <option value=${ca.categoryName}>${ca.categoryName}</option>
+        `;
+      });
     }
   } catch (error) {
     console.log(error);
   }
 };
 fetchAdminProducts();
+fetchAllCategory();
