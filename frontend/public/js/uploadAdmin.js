@@ -78,8 +78,6 @@ uploadPayload.image.forEach(img=>{
     <img src=${img} alt="productImg"/>
   `
 })
-
-
 }
 
 const myWidget = cloudinary.createUploadWidget(

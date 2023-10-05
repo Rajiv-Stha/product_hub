@@ -4,17 +4,17 @@ const searchName = urlParams.get("searchName")
 const allCatTabElm = document.querySelector("#allCategoyTab");
 
 
+console.log(categoryName)
+
 
 const displayActiveCatTab=()=>{
   console.log(document.querySelectorAll(".productCategoryTab"))
-document.querySelectorAll(".productCategoryTab").forEach(elm=>{
+  document.querySelectorAll(".productCategoryTab").forEach(elm=>{
   let name = elm.innerText;
   if(name===categoryName){
     elm.classList.add("category_card_li_active")
   }
-})
-
-}
+})}
 
 
 const initializeAllProduct=()=>{
@@ -41,7 +41,7 @@ const fetchAllProductsInProductAllPage=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
-                            <div class="category_card_content_box">
+                           <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>
@@ -52,7 +52,7 @@ const fetchAllProductsInProductAllPage=async()=>{
                         <h3 class="category_card_content_price">Rs.${p.price}</h3>
                     </div>
                   
-                </div>
+                </a>
                 `
             })
         }
@@ -74,7 +74,7 @@ const fetchDataByCategoryName=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
-                            <div class="category_card_content_box">
+                           <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>
@@ -85,7 +85,7 @@ const fetchDataByCategoryName=async()=>{
                         <h3 class="category_card_content_price">Rs.${p.price}</h3>
                     </div>
                   
-                </div>
+                </a>
                 `
             })
         }
@@ -125,7 +125,7 @@ const searchProduct=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
-                            <div class="category_card_content_box">
+                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>
@@ -136,7 +136,7 @@ const searchProduct=async()=>{
                         <h3 class="category_card_content_price">Rs.${p.price}</h3>
                     </div>
                   
-                </div>
+                </a>
                 `
             })
         }
