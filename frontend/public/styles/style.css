@@ -125,6 +125,9 @@
 .useremail{
     font-size: 12px;
 }
+.adminIconButton{
+    display: none;
+}
 /* main container  */
 .main_container{
   

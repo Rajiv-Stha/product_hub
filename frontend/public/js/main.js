@@ -136,8 +136,9 @@ const handleLogout = () => {
   }, 2000);
 };
 const addUserDataInNavbar = () => {
+
+  
   const user = getLoginUser();
-  console.log(user);
   if (user) {
     document.querySelector(".logoutButton").style.display = "flex";
     document.querySelector(".navCartButton").style.display = "block";
@@ -145,6 +146,10 @@ const addUserDataInNavbar = () => {
     document.querySelector(".username").innerText = user.username;
     document.querySelector(".useremail").innerText = user.email;
     avatar.src = user.image;
+    if(user.isAdmin){
+      console.log("inside main",document.querySelector(".adminIconButton"))
+      document.querySelector(".adminIconButton").style.display="block"
+    }
 
     document
       .querySelector(".logoutButton")
@@ -156,7 +161,7 @@ const addUserDataInNavbar = () => {
     document.querySelector(".navbar_button_wrapper").style.display = "flex";
     document.querySelector(".logoutButton").style.display = "none";
   }
-};
+}
 
 addUserDataInNavbar();
 fetchCategoryItems();
