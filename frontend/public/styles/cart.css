@@ -12,20 +12,8 @@
     flex: 8;
 
 }
-.cart_select_all{
-    background-color: rgb(255, 247, 247);
-    height: 7vh;
-    display: flex;
-    border-radius: 5px;
-    padding: 5px 1rem;
-    align-items: center;
-    justify-content: space-between;
-}
-.cart_checkbox_wrapper{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+
+
 .cart_checkbox_wrapper label{
     font-size: 13px;
 }
@@ -64,7 +52,7 @@
 
 }
 .cart_img_wrapper{
-    /* width: 320px; */
+    width: 110px;
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -73,6 +61,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
 .cart_details{
     display: flex;

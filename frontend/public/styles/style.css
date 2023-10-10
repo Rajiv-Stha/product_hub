@@ -227,6 +227,7 @@
 .best_category_product_card_img_wrapper img{
     height: 100%;
     width: 100%;
+    position: top;
     object-fit: cover;
 }
 .best_category_product_card_details{
