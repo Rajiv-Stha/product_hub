@@ -25,7 +25,7 @@ const displayUserData=async()=>{
   document.querySelector(".profileCardImg").src = user.image;
 }
 
-const handleGetFileUrl=async()=>{
+const handleGetFileUrl=async(cb)=>{
 
     if(!imgFile)return
      const reader = new FileReader();
@@ -40,7 +40,7 @@ const handleGetFileUrl=async()=>{
          })
          if(status===200){  
           const imgUrl = data.message;
-          return imgUrl ;
+          cb(imgUrl)
          }  
         }
       }
@@ -56,10 +56,11 @@ const handleGetFileUrl=async()=>{
     const user =  getLoginUser()
     if(!user)return;
     try {
-     const {status}=  await axios.put(`http://localhost:8000/api/user/${user._id}`,{...uploadPayload});
+     const {status,data}=  await axios.put(`http://localhost:8000/api/user/${user._id}`,{...uploadPayload});
 
      if(status===200){
       alert("successfull")
+      localStorage.setItem("user",JSON.stringify(data.message))
      }
 
     } catch (error) {
@@ -79,20 +80,23 @@ document.querySelector(".imageFile").addEventListener("change",e=>{
 
 
 document.querySelector(".update_btn").addEventListener("click",async(e)=>{
-
-  if(imgFile){
-    const url =  await handleGetFileUrl()
-    console.log(url)
-    uploadPayload.image = url ;
-  }
-
   let uploadPayload = {};
-
   uploadPayload.username =  document.querySelector("#profileCardUsername").value 
   uploadPayload.country = document.querySelector(".profileCard_select").value;
+  if(imgFile){
+    await handleGetFileUrl((url)=>{
+      imgFile=null
+      uploadPayload.image =url;
+      updateUser(uploadPayload)
+    })
+ 
+  }else{
+    updateUser(uploadPayload)
+  }
+
+
 
   // updateUser(uploadPayload);
-  console.log(uploadPayload)
 
 })
 
