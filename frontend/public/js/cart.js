@@ -20,7 +20,7 @@ const displayCart = () => {
     
      
          <div class="cart_img_wrapper">
-             <img src=${cart.image} alt="cart_img">
+             <img src=${cart.image[0]} alt="cart_img">
          </div>
          <div class="cart_details">
              <h3>${cart.name}</h3>

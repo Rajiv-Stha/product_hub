@@ -41,7 +41,11 @@ const fetchAllProductsInProductAllPage=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
+<<<<<<< HEAD
                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
+=======
+                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id}" class="category_card_content_box">
+>>>>>>> 4e26f7efc3634d0316930cba5ef82609428af16b
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>
@@ -74,7 +78,11 @@ const fetchDataByCategoryName=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
+<<<<<<< HEAD
                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
+=======
+                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id}" class="category_card_content_box">
+>>>>>>> 4e26f7efc3634d0316930cba5ef82609428af16b
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>
@@ -125,7 +133,11 @@ const searchProduct=async()=>{
 
                 document.querySelector(".category_card_content").innerHTML += `
                 
+<<<<<<< HEAD
                             <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id} class="category_card_content_box">
+=======
+                            <a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${p._id}" class="category_card_content_box">
+>>>>>>> 4e26f7efc3634d0316930cba5ef82609428af16b
                     <div class="category_card_content_image_wrapper">
                         <img src=${p.image[0]} alt="pant">
                     </div>

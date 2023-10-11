@@ -43,6 +43,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: top;
 }
 .single_product_sub_image_wrapper{
     display: flex;
@@ -54,9 +55,10 @@
 }
 .single_product_sub_image{
     height: 100px;
-    width: 100%;
+    width: 126px;
     background-color: rgb(242, 241, 241);
     object-fit: cover;
+    object-position: top;
 }
 .single_product_details_box{
     display: flex;

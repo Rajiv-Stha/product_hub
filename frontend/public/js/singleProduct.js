@@ -24,6 +24,10 @@ const getProductById = async () => {
 };
 
 getProductById();
+const handleImgChange = (src)=>{
+  document.querySelector(".single_product_main_image").src = src;
+
+}
 
 const displayProductData = () => {
   if (!productData) {
@@ -40,7 +44,7 @@ const displayProductData = () => {
   productData.image.forEach((i,ind)=>{
     if(ind===0)return;
     document.querySelector(".single_product_sub_image_wrapper").innerHTML +=`
-                        <img src=${i} alt="product_img" class="single_product_sub_image">
+                        <img src=${i} onclick="handleImgChange('${i}')" alt="product_img" class="single_product_sub_image">
   
     `
   })
