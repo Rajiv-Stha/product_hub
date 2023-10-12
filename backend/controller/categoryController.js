@@ -9,6 +9,7 @@ const createCategory = async (req, res, next) => {
   }
 };
 const getCategory = async (req, res, next) => {
+  console.log("inside controller")
   try {
     const allCategory = await categoryModel.find({});
     return res.status(200).json({ message: allCategory, success: true });

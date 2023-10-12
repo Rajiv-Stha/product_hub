@@ -18,7 +18,7 @@ app.use(
   );
   
   
-  app.set("trust proxy", 1); // trust first proxy
+  // app.set("trust proxy", 1); // trust first proxy
   app.use(cookieParser());
   app.use(morgan("dev"));
   
@@ -41,6 +41,7 @@ app.use(
     },
   })
 );
+console.log("incoming ..")
 
 app.use("/api/user", require("./routes/userRoute"));
 app.use("/api/product", require("./routes/productRoute"));
