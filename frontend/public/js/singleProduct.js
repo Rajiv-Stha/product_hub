@@ -11,8 +11,8 @@ let quantity = 1;
 
 const getProductById = async () => {
   try {
-    const { status, data } = await axios.get(
-      `http://localhost:8000/api/product?_id=${productId}`
+    const { status, data } = await axiosInstance.get(
+      `/product?_id=${productId}`
     );
 
     console.log(data.message[0]);
@@ -121,8 +121,8 @@ buyBtn.addEventListener("click", async () => {
     quantity:0
   };
   try {
-    const { data, status } = await axios.post(
-      "http://localhost:8000/api/order/create",
+    const { data, status } = await axiosInstance.post(
+      "/order/create",
       newOrder
     );
     if (status === 200) {

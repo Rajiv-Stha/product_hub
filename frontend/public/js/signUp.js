@@ -20,8 +20,8 @@ const handleSignup = async (e) => {
       // alert("password doesn't match");
       return;
     }
-    const { data, status } = await axios.post(
-      "http://localhost:8000/api/auth/register",
+    const { data, status } = await axiosInstance.post(
+      "/auth/register",
       signupPayload
     );
 

@@ -98,9 +98,7 @@ const fetchDataByCategoryName=async()=>{
 
 const fetchCategoryItemsInAllProducts = async () => {
   try {
-    const { status, data } = await axios.get(
-      "http://localhost:8000/api/category"
-    );
+    const { status, data } = await axiosInstance.get("/category")
 
     if (status === 200) {
       data.message.forEach((cat) => {

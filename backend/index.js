@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
-
+const morgan = require("morgan");
 app.use(express.json());
 
 require("dotenv").config();
 // console.log(process.env.MONGO_URI);
-require("./utils/db")();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -16,23 +15,17 @@ app.use(
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
-);
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", [
-//     "http://127.0.0.1:5500",
-//     "http://localhost:5500",
-//   ]);
-//   res.header("Access-Control-Allow-Credentials", true);
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
+  );
+  
+  
+  app.set("trust proxy", 1); // trust first proxy
+  app.use(cookieParser());
+  app.use(morgan("dev"));
+  
+  require("./utils/db")();
 
-app.set("trust proxy", 1); // trust first proxy
 
-app.use(cookieParser());
+
 
 app.use(
   session({
@@ -42,9 +35,9 @@ app.use(
     resave: false,
     cookie: {
       httpOnly: true,
-      secure: false,
+      secure: true,
       maxAge: 1000 * 60 * 60 * 24,
-      // sameSite: "lax",
+      sameSite: "none",
     },
   })
 );
@@ -55,5 +48,6 @@ app.use("/api/auth", require("./routes/authRoute"));
 app.use("/api/category", require("./routes/categoryRoute"));
 app.use("/api/order", require("./routes/orderRoute"));
 app.use("/api/cart", require("./routes/cartRoute"));
+
 app.use(require("./middlewares/error"));
 app.listen(8000, () => console.log("server listening on port 8000"));

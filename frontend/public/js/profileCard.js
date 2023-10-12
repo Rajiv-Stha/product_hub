@@ -56,7 +56,7 @@ const handleGetFileUrl=async(cb)=>{
     const user =  getLoginUser()
     if(!user)return;
     try {
-     const {status,data}=  await axios.put(`http://localhost:8000/api/user/${user._id}`,{...uploadPayload});
+     const {status,data}=  await axiosInstance.put(`/user/${user._id}`,{...uploadPayload});
 
      if(status===200){
       // alert("successfull")

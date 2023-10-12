@@ -1,11 +1,4 @@
-const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api",
-  withCredentails: true,
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Content-Type": "application/json",
-  },
-});
+
 
 const handleLogin = async (e) => {
   e.preventDefault();

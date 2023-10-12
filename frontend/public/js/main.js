@@ -1,4 +1,5 @@
 let avatar = document.querySelector(".avatar_img");
+const api = "https://shophub.onrender.com"
 
 document.querySelector(".navbar_search_btn").addEventListener("click", () => {
   let searchQuery = document.querySelector("#navSearchInput").value;
@@ -16,8 +17,10 @@ const checkIfToShowLoginToast = () => {
 checkIfToShowLoginToast();
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: `${api}/api`,
+
   withCredentials: true,
+
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
@@ -43,9 +46,7 @@ let cart = [
 
 const fetchCategoryItems = async () => {
   try {
-    const { status, data } = await axios.get(
-      "http://localhost:8000/api/category"
-    );
+    const { status, data } = await axiosInstance.get("/category")
     console.log(data);
     if (status === 200) {
       data.message.forEach((cat) => {
@@ -61,9 +62,7 @@ const fetchCategoryItems = async () => {
 
 const fetchAllProducts = async () => {
   try {
-    const { status, data } = await axios.get(
-      "http://localhost:8000/api/product"
-    );
+    const { status, data } = await axiosInstance.get("/product")
     console.log(data.message);
     if (status === 200) {
       data.message.forEach((product) => {
@@ -89,9 +88,7 @@ const fetchAllProducts = async () => {
 };
 const fetchBestCategoryProducts = async () => {
   try {
-    const { status, data } = await axios.get(
-      "http://localhost:8000/api/product"
-    );
+    const { status, data } = await axiosInstance.get("/product")
     // console.log("hello", data.message);
     if (status === 200) {
       data.message.forEach((product) => {

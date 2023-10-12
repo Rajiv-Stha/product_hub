@@ -1,9 +1,7 @@
 // fetching all products in the admin panel
 const fetchAdminProducts = async () => {
   try {
-    const { status, data } = await axios.get(
-      "http://localhost:8000/api/product"
-    );
+    const { status, data } = await axiosInstance.get("/product")
     console.log(data.message, "hi");
     if (status === 200) {
       document.querySelector(".admin_product_card_container").innerHTML = "";
@@ -36,9 +34,7 @@ const fetchAdminProducts = async () => {
 // deleting the product card from the database
 const handleAdminCartDelete = async (id) => {
   try {
-    const { data, status } = await axios.delete(
-      `http://localhost:8000/api/product/${id}`
-    );
+    const { data, status } = await axiosInstance.delete(`product/${id}`)
     if (status === 200) {
       showToast("success", "deleted successfully");
       setTimeout(() => {
@@ -53,9 +49,7 @@ const handleAdminCartDelete = async (id) => {
 // fetching category
 const fetchAllCategory = async () => {
   try {
-    const { data, status } = await axios.get(
-      "http://localhost:8000/api/category"
-    );
+    const { data, status } = await axiosInstance.get("/category")
     if (status === 200) {
       data.message.forEach((ca) => {
         document.querySelector(".admin_product_select").innerHTML += `

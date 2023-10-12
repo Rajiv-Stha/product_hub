@@ -10,9 +10,7 @@ const goToOrderDetailsPage=(orderId)=>{
 
 const fetchAdminProductsByStatus = async () => {
   try {
-    const { data, status } = await axios.get(
-      `http://localhost:8000/api/order?status=${orderTab}`
-    );
+    const { data, status } = await axiosInstance.get(`order?status=${orderTab}`)
     document.querySelector(".orderAllList").innerHTML = "";
     if (status === 200) {
       data.message.forEach((order) => {

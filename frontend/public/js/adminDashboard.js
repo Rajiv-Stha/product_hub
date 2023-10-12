@@ -8,7 +8,7 @@ const goToOrderDetailsPage=(orderId)=>{
 // this function fetches all orders
 const fetchAllOrders = async () => {
   try {
-    const { data, status } = await axios.get("http://localhost:8000/api/order");
+    const { data, status } = await axiosInstance.get("/order");
     if (status === 200) {
       data.message.forEach((order) => {
         document.querySelector(".orderList").innerHTML += `

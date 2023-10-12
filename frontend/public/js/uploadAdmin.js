@@ -33,8 +33,8 @@ document.querySelector("#uploadForm").addEventListener("submit", async (e) => {
   uploadPayload.owner = user._id;
 
   try {
-    const { data, status } = await axios.post(
-      "http://localhost:8000/api/product/create",
+    const { data, status } = await axiosInstance.post(
+      "/product/create",
       uploadPayload
     );
     console.log(data, "img");
@@ -60,8 +60,8 @@ const getLoginUserFromLs = () => {
 };
 
 const fetchCategory = async () => {
-  const { data, status } = await axios.get(
-    "http://localhost:8000/api/category"
+  const { data, status } = await axiosInstance.get(
+    "/category"
   );
   if (status === 200) {
     data.message.forEach((option) => {
