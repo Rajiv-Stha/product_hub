@@ -30,9 +30,11 @@ const displayOrderData=(data)=>{
         document.querySelector(".orderDetailsProductList").innerHTML +=`
         
                <tr>
-                                    <td class="order_details_item_name_box">
-                                        <img  src=${product?.product?.image[0]} alt="item">
-                                        <p>${product?.product?.name}</p>
+                                    <td >
+                                    <div class="order_details_item_name_box">
+                                    <img  src=${product?.product?.image[0]} alt="item">
+                                    <p>${product?.product?.name}</p>
+                                    </div>
                                     </td>
                                     <td>${product?.buyQuantity}</td>
                                     <td>Rs.${product?.product?.price}</td>

@@ -10,7 +10,7 @@ const fetchAdminProducts = async () => {
       data.message.forEach((product) => {
         document.querySelector(
           ".admin_product_card_container"
-        ).innerHTML += `<div class="admin_product_card">
+        ).innerHTML += `<a href="http://127.0.0.1:5500/frontend/public/html/singleProduct.html?productId=${product._id}" class="admin_product_card">
             <div class="admin_product_card_img_wrapper">
                 <img src=${product.image[0]} alt="productImg">
             </div>
@@ -25,7 +25,7 @@ const fetchAdminProducts = async () => {
                     <p class="admin_product_del_txt">Delete</p>
                 </button>
             </div>
-        </div>`;
+        </a>`;
       });
     }
   } catch (error) {

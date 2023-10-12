@@ -1,18 +1,16 @@
 .order_details_container{
     width: 100%;
-    background-color: gainsboro;
     display: flex;
     min-height: 90vh;
 }
 .admin_details_sidebar{
     display: flex;
     /* flex-direction: column; */
-    flex: 1.5;
+    flex: 2;
     padding: 1rem;
     /* height: 100vh; */
-    background-color:  rgb(210, 210, 210);
 }
-.admin_product_item {
+.admin_details_item {
     /* background-color: rgb(106, 106, 127); */
     width: 100%;
     display: flex;
@@ -21,19 +19,22 @@
 
 }
 
-.admin_product_item li a {
+.admin_details_item li a {
     padding: 1rem 0;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: gray;
 }
 .order_details_content{
     display: flex;
     flex-direction: column;
-    flex: 10.5;
+    flex: 10;
     /* background-color: bisque; */
     gap: 1rem;  
     padding: 1rem;
+
+
 }
 .order_details_content_box{
     background-color: white;
@@ -99,6 +100,8 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
+    border: 3px solid orange;
+    padding: 3px;
     object-fit: cover;
 }
 .order_details_profile_details{
@@ -112,6 +115,8 @@
 }
 .order_details_profile_para p{
     font-size: 13px;
+    color: gray;
+    letter-spacing: 1px;
 }
 .order_details_items{
     display: flex;
@@ -141,16 +146,17 @@
 .order_details_item_name_box{
     display: flex;
     align-items: center;
+    height: 100%;
     gap: 10px;
 }
 .order_details_items_table th, .order_details_items_table td{
+    color: gray;
     padding: 12px 15px;
 }
 .order_details_items_table thead tr th{
     font-weight: 600;
 }
 .order_details_items_table tbody tr{
-    border-bottom: 1px solid rgb(184, 184, 184);
     font-size: 14px;
 }
 .order_details_item_payment_box{
@@ -164,10 +170,46 @@
     gap: 1rem;
     justify-content: flex-end;
     padding: 5px 4.5rem;
+    color: gray;
 }
 .order_details_item_sub_total_box :nth-child(1){
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 .order_details_item_sub_total_box :nth-child(2){
-font-size: 14px;
+/* font-size: 14px;  */
+
+}
+
+.orderDetailsProductList tr{
+    height: 85px;
+
+    background-color: rgba(128, 128, 128, 0.155);
+}
+
+.order_details_items_table thead{
+    background-color: orange;
+}
+.order_details_items_table thead th{
+    color: white;
+}
+.orderDtailsheaderText{
+    color: orange;
+}
+.orderDetailsSaveButton ,.order_details_status_select{
+    border: 1px solid orange !important;
+    border-radius: 2px !important;
+    color: orange;
+}
+.orderDetailsOrderTime{
+    color: orange;
+}
+.customerUsername{
+    font-size: 18px !important;
+    color: orange !important;
+    font-weight: bold;
+}
+.adminSideListitem{
+    background-color: rgba(128, 128, 128, 0.106);
+    padding: 0 1rem;
+    border-radius: 3px;
 }

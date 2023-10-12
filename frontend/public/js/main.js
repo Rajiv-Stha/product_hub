@@ -148,7 +148,9 @@ const addUserDataInNavbar = () => {
     avatar.src = user.image;
     if(user.isAdmin){
       console.log("inside main",document.querySelector(".adminIconButton"))
-      document.querySelector(".adminIconButton").style.display="block"
+      let adminIconButton = document.querySelector(".adminIconButton")
+      if(!adminIconButton)return;
+        adminIconButton.style.display="block"
     }
 
     document
@@ -163,6 +165,22 @@ const addUserDataInNavbar = () => {
   }
 }
 
+const setActiveSidebarInAdminDash=()=>{
+  const sideList = document.querySelectorAll(".adminSideListitem");
+  if(sideList.length>0){
+    // const location = location.l;
+     const fileName =  location.href.split("/")[location.href.split("/").length-1]
+    sideList.forEach((list)=>{
+      const attr = list.getAttribute("data-sidebarItem");
+      if(attr ===fileName){
+        list.classList.add("adminActiveSidebar")
+      }
+    })
+  }
+
+}
+
+setActiveSidebarInAdminDash()
 addUserDataInNavbar();
 fetchCategoryItems();
 fetchAllProducts();
