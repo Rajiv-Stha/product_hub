@@ -12,8 +12,9 @@ const handleLogin = async (e) => {
     password: password.value,
   };
   try {
-    const { status, data } = await axiosInstance.post(
-      "/auth/login",
+    
+    const { status, data } = await axios.post(
+      "https://shophub.onrender.com/api/auth/login",
       emailPayload
     );
     email.value = "";
@@ -26,8 +27,8 @@ const handleLogin = async (e) => {
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
     }
   } catch (error) {
-    showToast("error", error.response.data.message);
-    // console.log(error.response.data.message);
+    console.log(error);
+    showToast("error", error?.response?.data?.message);
   }
 };
 

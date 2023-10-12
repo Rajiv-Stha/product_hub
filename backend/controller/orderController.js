@@ -12,7 +12,7 @@ const getOrder = async (req, res, next) => {
   try {
     let allOrder = await orderModel
       .find({ ...req.query })
-      .populate(["buyer", "item.product"]);
+      .populate(["buyer", "item.product"]).sort({createdAt:-1})
 
     return res.status(200).json({ message: allOrder, success: true });
   } catch (error) {

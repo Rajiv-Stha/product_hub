@@ -1,3 +1,5 @@
+
+
 const handleSignup = async (e) => {
   e.preventDefault();
   console.log("inside form");
@@ -20,8 +22,8 @@ const handleSignup = async (e) => {
       // alert("password doesn't match");
       return;
     }
-    const { data, status } = await axiosInstance.post(
-      "/auth/register",
+    const { data, status } = await axios.post(
+      "https://shophub.onrender.com/api/auth/register",
       signupPayload
     );
 
@@ -38,7 +40,7 @@ const handleSignup = async (e) => {
       showToast("success", "successfully registered");
     }
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
