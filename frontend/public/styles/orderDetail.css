@@ -12,7 +12,7 @@
     /* height: 100vh; */
     background-color:  rgb(210, 210, 210);
 }
-.admin_details_item{
+.admin_product_item {
     /* background-color: rgb(106, 106, 127); */
     width: 100%;
     display: flex;
@@ -20,10 +20,12 @@
     gap: 1rem;
 
 }
-.admin_product_item li a{
+
+.admin_product_item li a {
+    padding: 1rem 0;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 .order_details_content{
     display: flex;

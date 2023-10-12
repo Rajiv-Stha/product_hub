@@ -1,6 +1,7 @@
 .admin_product_container{
     width: 100%;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+    /* height: 100%; */
     display: flex;
    
 }
@@ -10,7 +11,6 @@
     flex: 1.5;
     padding: 1rem;
     /* height: 100vh; */
-    background-color:  rgb(210, 210, 210);
 }
 .admin_product_item{
     /* background-color: rgb(106, 106, 127); */
@@ -21,9 +21,10 @@
 
 }
 .admin_product_item li a{
+    padding: 1rem 0 ;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 .admin_product_content{
     display: flex;
@@ -36,7 +37,7 @@
     /* background-color: red; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 8px 4rem;
 }
 .admin_product_topBar h2{
@@ -129,14 +130,19 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: gray;
 }
 .admin_product_product_name{
     font-size: 14px;
     letter-spacing: 0.8px;
+    text-transform: capitalize;
 }
+
 .admin_product_product_price{
+    color: gray;
+
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 300;
 }
 .admin_product_card_button_wrapper{
     /* background-color: red; */
@@ -163,4 +169,28 @@
 }
 .admin_product_del_txt{
     color: #ff0000;
+}
+.deleteProductButtonAdmin{
+    text-align: center;
+    height: 45px;
+    border: 1px solid orange !important; 
+    outline: none !important;
+    width: fit-content !important;
+    background-color: white;
+    /* background-color:orange!important; */
+}
+.deleteProductButtonAdmin:hover{
+    background-color: orange;
+}
+.deleteProductButtonAdmin:hover > p{
+    color: white;
+}
+.deleteProductButtonAdmin p{
+    color: orange;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+}
+.deleteProductButtonAdmin img{
+    color: white !important;
 }

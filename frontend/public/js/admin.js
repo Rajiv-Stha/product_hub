@@ -20,12 +20,8 @@ const fetchAdminProducts = async () => {
                 <h3 class="admin_product_product_price">Rs. ${product.price}</h3>
             </div>
             <div class="admin_product_card_button_wrapper">
-                <button>
-                    <img width="16" height="16" src="https://img.icons8.com/metro/26/edit.png" alt="edit"/>
-                    <p>Edit</p>
-                </button>
-                <button onclick="handleAdminCartDelete('${product._id}')">
-                    <img src="../icons/red_delete.svg" alt="delete" class="admin_product_card_del_icon">
+        
+                <button class="deleteProductButtonAdmin" onclick="handleAdminCartDelete('${product._id}')">
                     <p class="admin_product_del_txt">Delete</p>
                 </button>
             </div>

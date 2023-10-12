@@ -59,8 +59,10 @@ const handleGetFileUrl=async(cb)=>{
      const {status,data}=  await axios.put(`http://localhost:8000/api/user/${user._id}`,{...uploadPayload});
 
      if(status===200){
-      alert("successfull")
+      // alert("successfull")
+      
       localStorage.setItem("user",JSON.stringify(data.message))
+      location.reload()
      }
 
     } catch (error) {
@@ -68,7 +70,7 @@ const handleGetFileUrl=async(cb)=>{
     }
   }
 
-document.querySelector(".avatar_header_btns").addEventListener("click",()=>{
+document.querySelector(".profileCardImg").addEventListener("click",()=>{
   document.querySelector(".imageFile").click()
 
 
