@@ -1,154 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product hub</title>
-    <link rel="stylesheet" href="./public/styles/style.css">
-    <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-  
-<script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./public/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-  <script defer src="./public/js/toast.js"></script>
-  <script defer src="./public/js/main.js"></script>
-</head>
-<body>
 
-    <div class="app_container"> 
-        <div id="navbar">
-            <a href="http://127.0.0.1:5500/frontend/index.html">
+    <script defer src="./public/js/toast.js"></script>
+    <script defer src="./public/js/main.js"></script>
+  </head>
+  <body>
+    <div class="app_container">
+      <div id="navbar">
+        <a href="http://127.0.0.1:5500/frontend/index.html">
+          <h2 class="navbar_heading">
+            Shop<span class="navbar_heading_span">hub</span>
+          </h2>
+        </a>
 
-                <h2 class="navbar_heading">Shop<span class="navbar_heading_span">hub</span></h2>
-            </a>
-
-                <div class="navbar_input_wrapper">
-
-              <input type="text" placeholder="Search" id="navSearchInput"/>
-              <img width="20" height="20" src="./public/icons/search.svg"  alt="search--v1" class="navbar_search_btn"/>
-            
-              
-            </div>
-            <div class="navbar_button_wrapper">
-              
-
-                <a href="./public/html/login.html">
-                    <button class="navbar_login_btn">Login</button>
-                </a>
-                <a href="./public/html/signUp.html">
-
-                    <button>Sign up</button>
-                </a>
-            </div>
-            <div class="profile_wrapper">
-                    <a class="adminIconButton" href="http://127.0.0.1:5500/frontend/public/html/adminDashboard.html">
-                  <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/admin-settings-female.png"
-                    alt="admin-settings-female" />
-                    </a>
-              <a class="navCartButton" href="./public/html/cart.html">
-                <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/shopping-cart.png" alt="shopping-cart"/>
-            </a>
-            <a href="./public/html/profileCard.html">
-
-              <img class="avatar_img" src="" alt="avatar">
-            </a>
-                <div>
-                    <h3 class="username"></h3>
-                    <p class="useremail"></p>
-                </div>
-                <button class="logoutButton">
-                    <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="exit--v1"/>
-                </button>
-            </div>
-
-          
-
-           
+        <div class="navbar_input_wrapper">
+          <input type="text" placeholder="Search" id="navSearchInput" />
+          <img
+            width="20"
+            height="20"
+            src="./public/icons/search.svg"
+            alt="search--v1"
+            class="navbar_search_btn"
+          />
         </div>
-        <div class="main_container">
-            <div class="hero_section">
-                <div class="category_box">
-                    <ul class="category_list">
-                        
-
-
-                    </ul>
-                </div>
-                <!-- <div class="slider_box"> -->
-                    <!-- <img src="./public/images/slider1.jpg" alt="slider1" class="slider_img"> -->
-                <!-- </div> -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"> <img src="./public/images/banner.png" alt="slider1" class="slider_img"></div>
-                      <div class="swiper-slide"> <img src="./public/images/banner2.png" alt="slider1" class="slider_img"></div>
-                      <div class="swiper-slide"> <img src="./public/images/banner3.png" alt="slider1" class="slider_img"></div>
-                      <!-- <div class="swiper-slide"> <img src="./public/images/slider1.jpg" alt="slider1" class="slider_img"></div> -->
-                    </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-            </div>
-            <div class="best_category_products_section">
-                <h2>Best Category Products</h2>
-                <div class="best_category_products_card_container">
-                 
-
-                    
-                </div>
-            </div>
-            <div class="all_products_section">
-                <h2>All Products</h2>
-                <div class="allProducts_card_container">
-               
-                </div>
-            </div>
+        <div class="navbar_button_wrapper">
+          <a href="./public/html/login.html">
+            <button class="navbar_login_btn">Login</button>
+          </a>
+          <a href="./public/html/signUp.html">
+            <button>Sign up</button>
+          </a>
         </div>
+        <div class="profile_wrapper">
+          <a
+            class="adminIconButton"
+            href="http://127.0.0.1:5500/frontend/public/html/adminDashboard.html"
+          >
+            <img
+              width="64"
+              height="64"
+              src="https://img.icons8.com/glyph-neue/64/admin-settings-female.png"
+              alt="admin-settings-female"
+            />
+          </a>
+          <a class="navCartButton" href="./public/html/cart.html">
+            <img
+              width="25"
+              height="25"
+              src="https://img.icons8.com/ios-filled/50/shopping-cart.png"
+              alt="shopping-cart"
+            />
+          </a>
+          <a href="./public/html/profileCard.html">
+            <img class="avatar_img" src="" alt="avatar" />
+          </a>
+          <div>
+            <h3 class="username"></h3>
+            <p class="useremail"></p>
+          </div>
+          <button class="logoutButton">
+            <img
+              width="20"
+              height="20"
+              src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png"
+              alt="exit--v1"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="main_container">
+        <div class="hero_section">
+          <div class="category_box">
+            <ul class="category_list"></ul>
+          </div>
+          <!-- <div class="slider_box"> -->
+          <!-- <img src="./public/images/slider1.jpg" alt="slider1" class="slider_img"> -->
+          <!-- </div> -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="./public/images/banner.png"
+                  alt="slider1"
+                  class="slider_img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./public/images/banner2.png"
+                  alt="slider1"
+                  class="slider_img"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="./public/images/banner3.png"
+                  alt="slider1"
+                  class="slider_img"
+                />
+              </div>
+              <!-- <div class="swiper-slide"> <img src="./public/images/slider1.jpg" alt="slider1" class="slider_img"></div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="best_category_products_section">
+          <h2>Best Category Products</h2>
+          <div class="best_category_products_card_container"></div>
+        </div>
+        <div class="all_products_section">
+          <h2>All Products</h2>
+          <div class="allProducts_card_container"></div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer_section">
+          <div class="footerLinks">
+            <h2>Quick Links</h2>
+            <ul class="footer_list">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Category</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">My Account</a></li>
+            </ul>
+          </div>
+          <div class="footerLinks">
+            <h2>Social</h2>
+            <ul class="footer_list">
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/facebook.png" alt="facebook"/>
+               <p>
+
+                 Facebook
+               </p> 
+              </a></li>
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="instagram-new--v1"/>
+              <p>
+                Instagram
+
+              </p>  
+            </a></li>
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/tiktok.png" alt="tiktok"/>
+              
+              <p>
+
+                Tiktok
+              </p>
+              
+              </a></li>
+            </ul>
+          </div>
+          <div class="footerLinks">
+            <h2>Contact</h2>
+            <ul class="footer_list">
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/phone--v1.png" alt="phone--v1"/>
+                <p>
+                  
+                  +977 9800078901
+              </p>
+              </a></li>
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/new-post.png" alt="new-post"/>
+                <p>
+                muraliofficial@gmail.com
+
+              </p>
+              </a></li>
+              <li><a href="#">
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/marker--v1.png" alt="marker--v1"/>
+                <p>
+                  Latvia, Europe
+
+                </p>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+        <hr/>
+
+        <div class="footer_copyRight">
+
+          &copy; Shophub Ptv Ltd. 2023. All Rights Reserved
+        </div>
+      </footer>
     </div>
-    
-</body>
+  </body>
 
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
-    </script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
   <script>
-
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
-    </script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </html>

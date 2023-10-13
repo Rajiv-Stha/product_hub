@@ -345,7 +345,46 @@
       color: white !important;
       fill: white !important;
   }
-/* media query */
+
+  /* footer  */
+  footer{
+    padding: 1rem 2rem;
+    background-color: var(--main_color);
+  }
+  .footer_section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .footerLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footerLinks h2{
+    color: whitesmoke;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .footer_list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .footer_list li{
+    font-size: 15px;
+  }
+  .footer_list li a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer_copyRight{
+    padding: 1rem 0;
+  }
+
+  /* media query */
 @media only screen and (min-width: 769px) and (max-width: 992px){
     #navbar{
         gap: 10px;

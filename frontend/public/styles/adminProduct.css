@@ -88,6 +88,7 @@
     padding: 0 1rem;
     border: none;
     outline: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 .admin_product_card_container{
