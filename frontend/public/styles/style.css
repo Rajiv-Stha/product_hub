@@ -395,6 +395,7 @@ hr{
   }
   .footer_copyRight{
     padding: 1rem 0;
+    text-align: center;
   }
 
   /* media query */
