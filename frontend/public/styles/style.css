@@ -112,6 +112,16 @@
     border-radius: 50%;
     object-fit: cover;
 }
+.navCartButton{
+    position: relative;
+
+}
+.cartCount{
+    position: absolute;
+    color: black;
+    top: -12px;
+    font-size: 13px;
+}
 .logoutButton {
     cursor: pointer;
     background-color: transparent;

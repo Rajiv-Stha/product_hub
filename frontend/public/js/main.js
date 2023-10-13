@@ -176,7 +176,19 @@ const setActiveSidebarInAdminDash=()=>{
   }
 
 }
+const addCartCount=()=>{
+  let  cart = localStorage.getItem("cart");
+  if(cart){
+    cart = JSON.parse(cart)
+  }
+  cart =   cart ?? [];
+  if(cart.length >0){   
+       document.querySelector(".cartCount").textContent = cart.length.toString() ;
+  }
+}
 
+
+addCartCount()
 setActiveSidebarInAdminDash()
 addUserDataInNavbar();
 fetchCategoryItems();
