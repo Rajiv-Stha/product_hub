@@ -50,7 +50,7 @@ const displayProductData = () => {
   })
   
 
-  if (productData.quantity <= -1) {
+  if (productData.quantity <= 0) {
     addToCartBtn.classList.add("disabled");
     buyBtn.classList.add("disabled");
     buyBtn.setAttribute("disabled", "true");
@@ -79,6 +79,8 @@ addToCartBtn.addEventListener("click", () => {
   setLs({ ...productData, buyQuantity: quantity });
   showToast("success", "Added to cart");
 });
+
+
 let getLs = () => {
   let cartData = localStorage.getItem("cart");
   if (cartData) {
@@ -86,6 +88,9 @@ let getLs = () => {
   }
   return cartData || [];
 };
+
+
+
 let setLs = (cart) => {
   const prev = getLs();
 
@@ -134,3 +139,4 @@ buyBtn.addEventListener("click", async () => {
     console.log(error.message);
   }
 });
+

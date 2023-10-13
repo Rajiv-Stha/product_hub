@@ -90,15 +90,18 @@ const handleBuy=async(e)=>{
       address:document.querySelector("#shippingAddressInput").value,
       number:document.querySelector("#shippingNumberInput").value,
     }
-    console.log(buyPayload)
 
-    // try {
-    //     await axiosInstance.post("/order/create",buyPayload)
-    //     showToast("success", "Order placed succesfully");
-    // } catch (error) {
-    //     console.log(error)
-    //     showToast("error", "Failed to place order  try again.");
-    // }
+    try {
+        await axiosInstance.post("/order/create",buyPayload)
+        localStorage.removeItem("cart")
+        document.querySelector("#shippingAddressInput").value = ""
+        document.querySelector("#shippingNumberInput").value = ""
+        displayCart()
+        showToast("success", "Order placed succesfully");
+    } catch (error) {
+        console.log(error)
+        showToast("error", "Failed to place order  try again.");
+    }
 
   }
 }
