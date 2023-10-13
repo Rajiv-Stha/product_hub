@@ -23,16 +23,15 @@ const displayCart = () => {
              <img src=${cart.image[0]} alt="cart_img">
          </div>
          <div class="cart_details">
-             <h3>${cart.name}</h3>
-             <p>${cart.desc}</p>
+             <h3 class="cart_item_name">${cart.name}</h3>
+             <p class="cart_desc_text">${cart.desc}</p>
     
          </div>
      </div>
          <div class="cart_others">
-             <h3>Rs. ${cart.price} (${cart.buyQuantity})</h3>
+             <h3 class="cartItemText">Rs. ${cart.price} (${cart.buyQuantity})</h3>
              <div class="cart_others_icon">
-                 <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/filled-like.png" alt="filled-like"/>
-                 <img onclick="handleDeleteCart('${cart._id}')" width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/filled-trash.png" alt="filled-trash"/>
+               <button class="deleteCartButton" onClick="handleDeleteCart('${cart._id}')">Delete</button>
              </div>
          </div>
      </div>`;
@@ -73,4 +72,43 @@ const displayCheckOutPrice = () => {
   cartTotalPrice.innerText = sum;
 };
 
+const handleBuy=async(e)=>{
+  e.preventDefault()
+  const allCartItem = getLs();
+  const user = getLoginUser()
+  if(allCartItem && user){
+    let totalPrice=0;
+    const item = allCartItem.map((p)=>{
+      totalPrice+=p.price * p.buyQuantity;
+      return { buyQuantity: p.buyQuantity  ,  product  : p._id }
+    })
+
+    const buyPayload={
+      item,
+      buyer:user._id,
+      totalPrice,
+      address:document.querySelector("#shippingAddressInput").value,
+      number:document.querySelector("#shippingNumberInput").value,
+    }
+    console.log(buyPayload)
+
+    // try {
+    //     await axiosInstance.post("/order/create",buyPayload)
+    //     showToast("success", "Order placed succesfully");
+    // } catch (error) {
+    //     console.log(error)
+    //     showToast("error", "Failed to place order  try again.");
+    // }
+
+  }
+}
+const checkIfDisabled=()=>{
+  let allCartItem=getLs()?.length;
+  if(!allCartItem){
+    document.querySelector(".cart_checkout_btn").setAttribute("disabled","true")
+    document.querySelector(".cart_checkout_btn").classList.add("buyButtonDisable")
+  }
+}
+document.querySelector(".order_summary_box").addEventListener("submit",handleBuy)
 displayCheckOutPrice();
+checkIfDisabled()

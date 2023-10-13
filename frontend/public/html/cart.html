@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/cart.css ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <script defer src="../js/cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="../js/toast.js"></script>
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/cart.js"></script>
 </head>
 <body>
     <div id="navbar">
@@ -67,6 +67,10 @@
        
     </div>
     <div class="cart_container">
+
+
+  
+
         <div class="left_cart_content">
           
             <div class="cart_items">
@@ -74,11 +78,9 @@
             </div>
         </div>
         <div class="right_cart_content">
-            <div class="order_summary_box">
-                <h2>Order Summary</h2>
+            <form class="order_summary_box">
+                <h2 class="order_summary_box_header_text">Order Summary</h2>
                 <div class="price_box">
-
-             
                 <div class="sub_total_box">
 
                     <p>Sub Total</p>
@@ -89,9 +91,13 @@
                 <p>Total</p>
                 <p class="cartTotalPrice">Rs. 620</p>
                </div>
+               <div>
             </div>
-            <button class="cart_checkout_btn">Proceed to Checkout</button>
+            <input required  class="cartShippingInput"  id="shippingAddressInput" type="text" placeholder="shipping address">
+            <input   required class="cartShippingInput"  id="shippingNumberInput" type="text" placeholder="phone number">
             </div>
+            <button class="cart_checkout_btn" >Buy Now </button>
+            </form>
         </div>
     </div>
         <!-- script for toast  -->

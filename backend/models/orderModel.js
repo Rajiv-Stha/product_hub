@@ -23,7 +23,13 @@ const orderSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    
+    address:{
+      type:String,
+      required:true,
+    },
+    number:{
+      type:Number,
+    },
     status: {
       type: String,
       required: true,
